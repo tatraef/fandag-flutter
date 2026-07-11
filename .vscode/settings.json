@@ -1,0 +1,34 @@
+{
+  "explorer.fileNesting.enabled": true,
+  "explorer.fileNesting.patterns": {
+    "*.dart": "${capture}.freezed.dart, ${capture}.g.dart, ${capture}.drift.dart"
+  },
+  "dart.flutterSdkPath": "/Users/arsen/fvm/versions/3.38.5",
+
+  "files.watcherExclude": {
+    "**/.dart_tool/**": true,
+    "**/build/**": true,
+    "**/.fvm/**": true,
+    "**/.git/**": true,
+    "**/ios/Pods/**": true,
+    "**/android/.gradle/**": true
+  },
+  "search.exclude": {
+    "**/.dart_tool": true,
+    "**/build": true,
+    "**/.fvm": true,
+    "**/*.g.dart": true,
+    "**/*.freezed.dart": true,
+    "**/*.drift.dart": true
+  },
+  "files.exclude": {
+    "**/.dart_tool": true,
+    "**/build": true
+  },
+
+  "dart.analysisExcludedFolders": [
+    "build",
+    ".dart_tool",
+    ".fvm"
+  ]
+}

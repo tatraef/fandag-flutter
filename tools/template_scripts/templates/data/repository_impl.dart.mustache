@@ -1,0 +1,15 @@
+import 'package:dio/dio.dart';
+
+import 'package:{{project_name}}/core/core.dart';
+import 'package:{{project_name}}/features/{{feature_name}}/domain.dart';
+
+import '../datasources/{{feature_name}}_datasource.dart';
+
+/// Implementation of [{{feature_name_pascal}}Repository]
+class {{feature_name_pascal}}RepositoryImpl implements {{feature_name_pascal}}Repository {
+  const {{feature_name_pascal}}RepositoryImpl(this._datasource);
+
+  final {{feature_name_pascal}}Datasource _datasource;
+
+  // TODO: Implement repository methods with DioException -> ApiException mapping
+}

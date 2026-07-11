@@ -1,0 +1,102 @@
+name: fandag
+description: "Fændag — агрегатор походов и выездов туристических клубов"
+publish_to: 'none'
+version: 0.1.0
+
+environment:
+  sdk: "3.10.4"
+  flutter: "3.38.5"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_localizations:
+    sdk: flutter
+  slang: 4.13.0
+  slang_flutter: 4.13.0
+
+  # State Management & DI
+  flutter_riverpod: 3.1.0
+  riverpod_annotation: 4.0.0
+
+  # Navigation
+  go_router: 17.1.0
+
+  # Network
+  dio: 5.9.2
+
+  # Firebase
+  firebase_core: 4.1.0
+  firebase_crashlytics: 5.0.1
+  firebase_analytics: 12.0.1
+  firebase_messaging: 16.0.1
+
+  # Local Storage
+  drift: 2.31.0
+  sqlite3_flutter_libs: 0.6.0+eol
+  shared_preferences: 2.5.4
+  flutter_secure_storage: 10.0.0
+
+  # Models & Serialization
+  freezed_annotation: 3.1.0
+  json_annotation: 4.9.0
+
+  # Utils
+  path_provider: 2.1.5
+  path: 1.9.1
+  url_launcher: 6.3.2
+  cached_network_image: 3.4.1
+
+  # Debug & Inspector
+  mad_inspector:
+    git:
+      url: ssh://git@git.mb-dev.ru:10022/madbrains/internal/mad-inspector-flutter.git
+      ref: 3.4.2
+      path: packages/mad_inspector
+  mad_inspector_dio:
+    git:
+      url: ssh://git@git.mb-dev.ru:10022/madbrains/internal/mad-inspector-flutter.git
+      ref: 3.4.2
+      path: packages/mad_inspector_dio
+  mad_inspector_debug_menu:
+    git:
+      url: ssh://git@git.mb-dev.ru:10022/madbrains/internal/mad-inspector-flutter.git
+      ref: 3.4.2
+      path: packages/mad_inspector_debug_menu
+  mad_inspector_server_selection:
+    git:
+      url: ssh://git@git.mb-dev.ru:10022/madbrains/internal/mad-inspector-flutter.git
+      ref: 3.4.2
+      path: packages/mad_inspector_server_selection
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  integration_test:
+    sdk: flutter
+  flutter_lints: 5.0.0
+
+  # Testing
+  mocktail: 1.0.4
+
+  # Code Generation
+  build_runner: 2.12.2
+  riverpod_generator: 4.0.0+1
+  riverpod_lint: 3.1.0
+  freezed: 3.2.3
+  json_serializable: 6.11.2
+  drift_dev: 2.31.0
+
+  # Environment Management
+  mad_env_cli:
+    git:
+      url: ssh://git@git.mb-dev.ru:10022/madbrains/util/mad-env-cli.git
+      ref: 1.0.0
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - assets/images/
+    - assets/icons/
+    - assets/fonts/

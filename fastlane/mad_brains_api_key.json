@@ -1,0 +1,7 @@
+{
+    "key_id": "5UKTK9ZM3L",
+    "issuer_id": "19b32f43-e657-417c-b62c-3faa70ba7b1c",
+    "duration": 1100,
+    "key": "-----BEGIN PRIVATE KEY-----\nMIGTAgEAMBMGByqGSM49AgEGCCqGSM49AwEHBHkwdwIBAQQg8nlxWkpcvhb7IukbqCvIaqCmi211F5AEmDA8Od/kwxagCgYIKoZIzj0DAQehRANCAASzKNhsf3GRBvCPBwzQmy7bpwIPY9SuAQPBlwM2Ti6ZFBG7ZOoKc5mRdSRMccrydpDQQHiMWZx2xxTfrHuQhb76\n-----END PRIVATE KEY-----",
+    "in_house": false
+}

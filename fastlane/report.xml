@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+  <testsuite name="fastlane.lanes">
+    
+    
+    
+      
+      <testcase classname="fastlane.lanes" name="00: Verifying fastlane version" time="0.000198">
+        
+      </testcase>
+    
+      
+      <testcase classname="fastlane.lanes" name="01: Verifying fastlane version" time="0.000133">
+        
+      </testcase>
+    
+      
+      <testcase classname="fastlane.lanes" name="02: Verifying fastlane version" time="0.000164">
+        
+      </testcase>
+    
+      
+      <testcase classname="fastlane.lanes" name="03: import_from_git" time="1.876169">
+        
+      </testcase>
+    
+      
+      <testcase classname="fastlane.lanes" name="04: Switch to pub_get_all lane" time="0.0001">
+        
+      </testcase>
+    
+      
+      <testcase classname="fastlane.lanes" name="05: Switch to resolve_fvm lane" time="6.1e-05">
+        
+      </testcase>
+    
+      
+      <testcase classname="fastlane.lanes" name="06: fvm list" time="1.454137">
+        
+      </testcase>
+    
+      
+      <testcase classname="fastlane.lanes" name="07: shell command" time="0.008488">
+        
+      </testcase>
+    
+      
+      <testcase classname="fastlane.lanes" name="08: fvm install 3.38.5; fvm use 3.38.5 --force" time="0.349311">
+        
+      </testcase>
+    
+      
+      <testcase classname="fastlane.lanes" name="09: /Users/andrejkurakov/VsCode/flutter_template_v3/.fvm/flutter_sdk/bin/flutter --version" time="0.159064">
+        
+      </testcase>
+    
+      
+      <testcase classname="fastlane.lanes" name="10: /Users/andrejkurakov/VsCode/flutter_template_v3/.fvm/flutter_sdk/bin/flutter pub get" time="2.056864">
+        
+      </testcase>
+    
+      
+      <testcase classname="fastlane.lanes" name="11:  cd ..; make generate_env_files; cd fastlane" time="0.399597">
+        
+      </testcase>
+    
+      
+      <testcase classname="fastlane.lanes" name="12: Switch to flutter_analyze_warnings lane" time="9.4e-05">
+        
+      </testcase>
+    
+      
+      <testcase classname="fastlane.lanes" name="13: Switch to resolve_fvm lane" time="6.8e-05">
+        
+      </testcase>
+    
+      
+      <testcase classname="fastlane.lanes" name="14: shell command" time="3.848575">
+        
+      </testcase>
+    
+      
+      <testcase classname="fastlane.lanes" name="15: Switch to auto_format lane" time="0.000104">
+        
+      </testcase>
+    
+      
+      <testcase classname="fastlane.lanes" name="16: shell command" time="0.532541">
+        
+      </testcase>
+    
+      
+      <testcase classname="fastlane.lanes" name="17: git status | grep modified:; echo " time="0.024202">
+        
+      </testcase>
+    
+  </testsuite>
+</testsuites>

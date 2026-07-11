@@ -1,0 +1,83 @@
+# Flutter Template v3 Typography
+# Font styles for PrimaryThemeFonts
+
+styles:
+  regular12:
+    size: 12
+    weight: 400
+    doc: "Small body text, labels"
+
+  regular14:
+    size: 14
+    weight: 400
+    doc: "Body text"
+
+  regular16:
+    size: 16
+    weight: 400
+    doc: "Large body text"
+
+  medium12:
+    size: 12
+    weight: 500
+    doc: "Small medium text, badges"
+
+  medium14:
+    size: 14
+    weight: 500
+    doc: "Medium body text"
+
+  medium16:
+    size: 16
+    weight: 500
+    doc: "Large medium text"
+
+  semibold14:
+    size: 14
+    weight: 600
+    doc: "Small semibold text, buttons"
+
+  semibold16:
+    size: 16
+    weight: 600
+    doc: "Semibold body text"
+
+  semibold18:
+    size: 18
+    weight: 600
+    doc: "Section titles"
+
+  semibold20:
+    size: 20
+    weight: 600
+    doc: "Medium headings"
+
+  semibold24:
+    size: 24
+    weight: 600
+    doc: "Large headings"
+
+  bold16:
+    size: 16
+    weight: 700
+    doc: "Bold body text"
+
+  bold20:
+    size: 20
+    weight: 700
+    doc: "Bold headings"
+
+  bold24:
+    size: 24
+    weight: 700
+    doc: "Large bold headings"
+
+  bold28:
+    size: 28
+    weight: 700
+    doc: "Extra large headings"
+
+  bold32:
+    size: 32
+    weight: 700
+    doc: "Display headings"

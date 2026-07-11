@@ -1,0 +1,46 @@
+{
+  "project_name": "flutter_template_v3",
+  "presets": {
+    "full": {
+      "domain": {
+        "entity": "domain/entity.dart",
+        "repository": "domain/repository.dart"
+      },
+      "data": {
+        "dto": "data/dto.dart",
+        "datasource": "data/datasource.dart",
+        "repository_impl": "data/repository_impl.dart"
+      },
+      "presentation": {
+        "controller": "presentation/controller.dart",
+        "page": "presentation/page.dart"
+      }
+    },
+    "minimal": {
+      "domain": {
+        "entity": "domain/entity.dart",
+        "repository": "domain/repository.dart"
+      },
+      "presentation": {
+        "controller": "presentation/controller.dart",
+        "page": "presentation/page.dart"
+      }
+    },
+    "data-only": {
+      "domain": {
+        "entity": "domain/entity.dart",
+        "repository": "domain/repository.dart"
+      },
+      "data": {
+        "dto": "data/dto.dart",
+        "datasource": "data/datasource.dart",
+        "repository_impl": "data/repository_impl.dart"
+      }
+    },
+    "ui-only": {
+      "presentation": {
+        "page": "presentation/page.dart"
+      }
+    }
+  }
+}

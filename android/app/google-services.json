@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "553728888135",
+    "project_id": "fandag-app",
+    "storage_bucket": "fandag-app.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:553728888135:android:a46a0d2b7cd238e408d062",
+        "android_client_info": {
+          "package_name": "ru.fandag.app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAhOUqHbB97TuRsLPmUFUvObVVrP877sOg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,91 @@
+# Flutter Template v3 Color Palette
+# Generated color constants for AppColors class
+
+sections:
+  Primary:
+    primary:
+      hex: "FF2196F3"
+      doc: "Primary blue"
+    primaryLight:
+      hex: "FF64B5F6"
+      doc: "Light primary blue"
+    primaryDark:
+      hex: "FF1976D2"
+      doc: "Dark primary blue"
+
+  Secondary:
+    secondary:
+      hex: "FF03DAC6"
+      doc: "Secondary teal"
+    secondaryLight:
+      hex: "FF66FFF9"
+      doc: "Light secondary teal"
+    secondaryDark:
+      hex: "FF00A896"
+      doc: "Dark secondary teal"
+
+  Neutral:
+    white:
+      hex: "FFFFFFFF"
+      doc: "Pure white"
+    black:
+      hex: "FF000000"
+      doc: "Pure black"
+    grey100:
+      hex: "FFF5F5F5"
+      doc: "Lightest grey"
+    grey200:
+      hex: "FFEEEEEE"
+      doc: "Very light grey"
+    grey300:
+      hex: "FFE0E0E0"
+      doc: "Light grey"
+    grey400:
+      hex: "FFBDBDBD"
+      doc: "Medium light grey"
+    grey500:
+      hex: "FF9E9E9E"
+      doc: "Medium grey"
+    grey600:
+      hex: "FF757575"
+      doc: "Medium dark grey"
+    grey700:
+      hex: "FF616161"
+      doc: "Dark grey"
+    grey800:
+      hex: "FF424242"
+      doc: "Very dark grey"
+    grey900:
+      hex: "FF212121"
+      doc: "Darkest grey"
+
+  Semantic:
+    error:
+      hex: "FFB00020"
+      doc: "Error red"
+    errorLight:
+      hex: "FFEF5350"
+      doc: "Light error red"
+    success:
+      hex: "FF4CAF50"
+      doc: "Success green"
+    warning:
+      hex: "FFFFC107"
+      doc: "Warning amber"
+    info:
+      hex: "FF2196F3"
+      doc: "Info blue"
+
+  Surface:
+    surfaceLight:
+      hex: "FFFFFFFF"
+      doc: "Light surface"
+    surfaceDark:
+      hex: "FF121212"
+      doc: "Dark surface"
+    backgroundLight:
+      hex: "FFF5F5F5"
+      doc: "Light background"
+    backgroundDark:
+      hex: "FF1E1E1E"
+      doc: "Dark background"

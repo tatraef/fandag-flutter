@@ -1,0 +1,107 @@
+import_from_git(
+    url: 'ssh://git@git.mb-dev.ru:10022/madbrains/util/fastlane-scripts.git',
+    branch: 'v4',
+    path: 'Fastfile_Flutter',
+    dependencies: ['Fastfile_utils', 'Fastfile_iOS', 'Fastfile_Android']
+)
+
+$flutter_folders = [
+    "", # root
+]
+
+firebase_id_ios = '1:373672833970:ios:cacdb8e6218dfe48442aab'
+firebase_id_android = '1:373672833970:android:ded1954896730ddb442aab'
+firebase_test_groups = 'madbrains,outsiders'
+
+dart_defines_dev='mb.isTestBuild=true;mb.isInspectorOnDebugMode=true'
+dart_defines_prod='mb.isTestBuild=false;mb.isInspectorOnDebugMode=false'
+dart_defines_prod_with_inspector='mb.isTestBuild=false;mb.isInspectorOnDebugMode=true'
+
+lane :lint do
+    pub_get_all()
+    _gen_envs()
+    flutter_analyze_warnings()
+    _check_issues(push_changes = false)
+    # validate_conventional_commits()
+end
+
+lane :fix_issues do
+    _check_issues(push_changes = false)
+end
+
+lane :fix_issues_and_push do
+    _check_issues(push_changes = true)
+end
+
+# Firebase
+
+lane :upload_firebase_dev do
+    _gen_envs()
+	firebase_flutter(
+		firebase_id_ios: firebase_id_ios,
+		firebase_id_android: firebase_id_android,
+		firebase_deploy_web: false,
+		test_groups: firebase_test_groups,
+		dart_defines: dart_defines_dev,
+	)
+end
+
+lane :upload_firebase_prod do
+    _gen_envs()
+	firebase_flutter(
+		firebase_id_ios: firebase_id_ios,
+		firebase_id_android: firebase_id_android,
+		firebase_deploy_web: false,
+		test_groups: firebase_test_groups,
+		dart_defines: dart_defines_prod,
+	)
+end
+
+lane :upload_firebase_prod_with_inspector do
+    _init()
+    _gen_envs()
+	firebase_flutter(
+		firebase_id_ios: firebase_id_ios,
+		firebase_id_android: firebase_id_android,
+		firebase_deploy_web: false,
+		test_groups: firebase_test_groups,
+		dart_defines: dart_defines_prod_with_inspector,
+	)
+end
+
+def _gen_envs()
+    sh(" cd ..; make generate_env_files; cd fastlane")
+end
+
+def _check_issues(push_changes)
+  run_and_check_changes(push_changes = push_changes) do
+    auto_format
+  end
+end
+
+lane :auto_format do
+    flutter_format_with_packages(true)
+end
+
+
+# Stores
+
+platform :ios do
+ 	lane :upload_tf do
+ 		upload_flutter_tf(
+			ios_scheme: 'Runner',
+			dart_defines: dart_defines_prod,
+ 		)
+ 	end
+end
+
+platform :android do
+	lane :upload_gp do
+ 		upload_flutter_gp(
+ 			android_json_key_path: "android/app/google_play_key.json",
+ 			android_package_name: '---',
+ 			android_track_name: "internal",
+ 			dart_defines: dart_defines_prod
+ 		)
+ 	end
+end

@@ -1,0 +1,102 @@
+stages:
+  - test
+  - build
+
+.default_template: &default
+  tags:
+    - mac
+  environment:
+    name: ci
+
+.manual_template: &manual_build
+  <<: *default
+  stage: build
+  when: manual
+
+.test_template: &test_mr
+  <<: *default
+  stage: test
+  only:
+    - merge_requests
+
+.git_set_url: &git_set_url |
+  git remote set-url --push origin ssh://git@git.mb-dev.ru:10022/madbrains/internal/template-projects/template-flutter-v3.git
+  git remote get-url --push origin
+
+.setup_environment: &setup_environment |
+  gem install bundler -v 2.5.0;
+  bundle _2.5.0_ install;
+  echo "$TEMPLATE_SECRETS" >> config/secrets.env
+
+# Jobs
+
+lint:
+  <<: *test_mr
+  script:
+    - *setup_environment
+    - bundle exec fastlane lint
+
+autoformat:
+  <<: *test_mr
+  when: manual
+  script:
+    - *setup_environment
+    - bundle exec fastlane autoformat
+
+beta_dev_manual:
+  <<: *manual_build
+  script:
+    - *git_set_url
+    - *setup_environment
+    - bundle exec fastlane upload_firebase_dev
+
+beta_prod_manual:
+  <<: *manual_build
+  script:
+    - *git_set_url
+    - *setup_environment
+    - bundle exec fastlane upload_firebase_prod
+
+beta_prod_manual_with_inspector:
+  <<: *manual_build
+  script:
+    - *git_set_url
+    - *setup_environment
+    - bundle exec fastlane upload_firebase_prod_with_inspector
+
+release_gp:
+  <<: *manual_build
+  script:
+    - *git_set_url
+    - *setup_environment
+    - bundle exec fastlane android upload_gp
+
+release_tf:
+  <<: *manual_build
+  script:
+    - *git_set_url
+    - *setup_environment
+    - bundle exec fastlane ios upload_tf
+
+# Auto Jobs
+
+beta_dev_auto:
+  <<: *default
+  stage: build
+  only:
+    - develop
+  script:
+    - *git_set_url
+    - *setup_environment
+    - bundle exec fastlane upload_firebase_dev
+
+#release_auto:
+#  <<: *default
+#  stage: build
+#  only:
+#    - master
+#  script:
+#    - *git_set_url
+#    - *setup_environment
+#    - bundle exec fastlane ios upload_tf
+#    - bundle exec fastlane android upload_gp

@@ -1,0 +1,16 @@
+name: template_scripts
+description: CLI toolkit for flutter_template_v3 code generation (theme, fonts, feature scaffolding)
+version: 1.0.0
+publish_to: none
+
+environment:
+  sdk: ^3.10.4
+
+dependencies:
+  mad_scripts_base: ^1.1.0
+  yaml: ^3.1.0
+  path: ^1.9.0
+  args: ^2.6.0
+
+dev_dependencies:
+  lints: ^5.0.0

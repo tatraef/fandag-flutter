@@ -1,0 +1,71 @@
+# Flutter Template v3 Theme Colors
+# Semantic, theme-aware color definitions
+
+colors:
+  textPrimary:
+    light: grey900
+    dark: white
+    doc: "Primary text color"
+
+  textSecondary:
+    light: grey600
+    dark: grey400
+    doc: "Secondary text color"
+
+  textTertiary:
+    light: grey400
+    dark: grey600
+    doc: "Tertiary text color"
+
+  textInverse:
+    light: white
+    dark: grey900
+    doc: "Inverse text color"
+
+  backgroundPrimary:
+    light: backgroundLight
+    dark: backgroundDark
+    doc: "Primary background"
+
+  backgroundSecondary:
+    light: white
+    dark: surfaceDark
+    doc: "Secondary background"
+
+  surfacePrimary:
+    light: surfaceLight
+    dark: surfaceDark
+    doc: "Primary surface"
+
+  surfaceSecondary:
+    light: grey100
+    dark: grey800
+    doc: "Secondary surface"
+
+  border:
+    light: grey300
+    dark: grey700
+    doc: "Border color"
+
+  divider:
+    light: grey200
+    dark: grey800
+    doc: "Divider color"
+
+  accent:
+    light: primary
+    dark: primaryLight
+    doc: "Accent color"
+
+  error:
+    light: error
+    dark: errorLight
+    doc: "Error color"
+
+  success:
+    value: success
+    doc: "Success color"
+
+  warning:
+    value: warning
+    doc: "Warning color"

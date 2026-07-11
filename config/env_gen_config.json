@@ -1,0 +1,12 @@
+{
+  "environment": {
+    "android": "android/environment.properties",
+    "ios": "ios/Flutter/Environment.xcconfig",
+    "dart": "lib/core/environment/environment.dart"
+  },
+  "secrets": {
+    "android": "android/secrets.properties",
+    "ios": "ios/Flutter/Secrets.xcconfig",
+    "dart": "lib/core/environment/secrets.dart"
+  }
+}

@@ -1,0 +1,25 @@
+import 'package:freezed_annotation/freezed_annotation.dart';
+
+import 'package:{{project_name}}/features/{{feature_name}}/domain.dart';
+
+part '{{feature_name}}_dto.freezed.dart';
+part '{{feature_name}}_dto.g.dart';
+
+/// Data Transfer Object for {{feature_name_pascal}}
+@freezed
+abstract class {{feature_name_pascal}}Dto with _${{feature_name_pascal}}Dto {
+  const {{feature_name_pascal}}Dto._();
+
+  const factory {{feature_name_pascal}}Dto({
+    // TODO: Add DTO fields
+  }) = _{{feature_name_pascal}}Dto;
+
+  factory {{feature_name_pascal}}Dto.fromJson(Map<String, dynamic> json) =>
+      _${{feature_name_pascal}}DtoFromJson(json);
+
+  /// Converts this DTO to a domain entity.
+  {{feature_name_pascal}} toDomain() {
+    // TODO: Map DTO fields to entity
+    return const {{feature_name_pascal}}();
+  }
+}

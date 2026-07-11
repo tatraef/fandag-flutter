@@ -1,0 +1,63 @@
+{
+  "common": {
+    "appTitle": "Fændag",
+    "retry": "Retry",
+    "errors": {
+      "network": "No internet connection",
+      "unauthorized": "Session expired. Please sign in again.",
+      "timeout": "Request timed out. Please try again.",
+      "server": "Server error. Please try again later.",
+      "unknown": "Something went wrong"
+    }
+  },
+  "navigation": {
+    "hikes": "Hikes",
+    "favorites": "Favorites"
+  },
+  "feed": {
+    "empty": "No hikes yet",
+    "loadError": "Failed to load. Pull down to retry"
+  },
+  "filters": {
+    "title": "Filters",
+    "apply": "Apply",
+    "reset": "Reset",
+    "dateFrom": "Date from",
+    "dateTo": "Date to",
+    "difficulty": "Difficulty",
+    "priceMax": "Max price",
+    "priceAny": "Any",
+    "region": "Region",
+    "organizer": "Organizer",
+    "anyValue": "Any"
+  },
+  "detail": {
+    "parameters": "Parameters",
+    "price": "Price",
+    "distance": "Distance",
+    "elevation": "Elevation gain",
+    "departureTime": "Departure time",
+    "departurePlace": "Meeting point",
+    "spotsLeft": "Spots left",
+    "region": "Region",
+    "requirements": "What to bring",
+    "includes": "Included",
+    "organizer": "Organizer",
+    "call": "Call",
+    "openOriginal": "Open original",
+    "loadError": "Failed to load the hike"
+  },
+  "organizer": {
+    "upcomingHikes": "Upcoming hikes",
+    "loadError": "Failed to load the organizer"
+  },
+  "favorites": {
+    "emptyMessage": "You haven't saved anything yet",
+    "loadError": "Failed to load favorites"
+  },
+  "units": {
+    "rub": "₽",
+    "km": "km",
+    "m": "m"
+  }
+}
