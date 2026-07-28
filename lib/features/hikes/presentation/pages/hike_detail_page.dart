@@ -288,12 +288,15 @@ class _ParamRow extends StatelessWidget {
             ),
           ),
           const Spacer(),
-          Text(
-            value,
-            style: (highlight
-                    ? context.primaryFonts.semibold16
-                    : context.primaryFonts.medium14)
-                .copyWith(color: valueColor),
+          Flexible(
+            child: Text(
+              value,
+              textAlign: TextAlign.end,
+              style: (highlight
+                      ? context.primaryFonts.semibold16
+                      : context.primaryFonts.medium14)
+                  .copyWith(color: valueColor),
+            ),
           ),
         ],
       ),
