@@ -1,0 +1,160 @@
+[
+  {
+    "id": 729,
+    "organizer_id": 1,
+    "source_id": 1,
+    "title": "Ледник Тана",
+    "date_start": "2026-07-28",
+    "date_end": "2026-07-28",
+    "price": 1500,
+    "difficulty": "лёгкая",
+    "distance_km": 12,
+    "elevation_gain_m": 500,
+    "departure_time": "07:00",
+    "departure_place": "г.Владикавказ, ул.Кирова, 47 (\"Ростелеком\" напротив роддома)",
+    "description": "Небольшая, но красивая долина изобилует водопадами и водоскатами из под снежников и ледников.",
+    "requirements": [
+      "воду",
+      "перекус",
+      "чай"
+    ],
+    "includes": [
+      "Экосбор Нац.парка + 250 р."
+    ],
+    "images": [
+      "https://picsum.photos/seed/fandag1/800/600",
+      "https://picsum.photos/seed/fandag2/800/600",
+      "https://picsum.photos/seed/fandag3/800/600",
+      "https://picsum.photos/seed/fandag4/800/600"
+    ],
+    "spots_left": null,
+    "region": "Нац. парк \"Алания\"",
+    "source_url": "https://t.me/tvoyavisota/13355",
+    "source_post_id": "13355_2026-07-28",
+    "contact_phone": "+7 928 067 44 35 Зарина",
+    "contact_name": null,
+    "organizer": {
+      "id": 1,
+      "name": "Твоя Высота"
+    }
+  },
+  {
+    "id": 727,
+    "organizer_id": 1,
+    "source_id": 1,
+    "title": "Цейский лес и канатная дорога",
+    "date_start": "2026-07-29",
+    "date_end": "2026-07-29",
+    "price": 1500,
+    "difficulty": "лёгкая",
+    "distance_km": 10,
+    "elevation_gain_m": 250,
+    "departure_time": "08:00",
+    "departure_place": "ул.Кирова, 47 (Ростелеком напротив роддома)",
+    "description": "Прогулка в сосновый лес Цейского ущелья с возможностью катания на канатке до ледника Сказский.",
+    "requirements": [
+      "перекус на обед",
+      "чай"
+    ],
+    "includes": [
+      "транспорт",
+      "страховка"
+    ],
+    "images": [
+      "https://picsum.photos/seed/fandag11/800/600",
+      "https://picsum.photos/seed/fandag12/800/600",
+      "https://picsum.photos/seed/fandag13/800/600",
+      "https://picsum.photos/seed/fandag14/800/600"
+    ],
+    "spots_left": null,
+    "region": "Цейское ущелье",
+    "source_url": "https://t.me/tvoyavisota/13364",
+    "source_post_id": "13364_2026-07-29",
+    "contact_phone": "8 928 067 44 35 Зарина",
+    "contact_name": "Зарина",
+    "organizer": {
+      "id": 1,
+      "name": "Твоя Высота"
+    }
+  },
+  {
+    "id": 730,
+    "organizer_id": 1,
+    "source_id": 1,
+    "title": "Зругское озеро",
+    "date_start": "2026-07-31",
+    "date_end": "2026-07-31",
+    "price": 1700,
+    "difficulty": "высокая",
+    "distance_km": 10,
+    "elevation_gain_m": 800,
+    "departure_time": "08:00",
+    "departure_place": "г.Владикавказ, ул.Кирова, 47 (Ростелеком напротив роддома)",
+    "description": "Крупнейшее в Северной Осетии озеро длиной 300 м, великолепное высокогорное озеро - труднодоступное, но навсегда запоминающееся!",
+    "requirements": [
+      "паспорт РФ",
+      "воду",
+      "перекус",
+      "чай",
+      "тёплые вещи",
+      "головной убор для защиты от солнца",
+      "солнцезащитный крем"
+    ],
+    "includes": [],
+    "images": [
+      "https://picsum.photos/seed/fandag21/800/600",
+      "https://picsum.photos/seed/fandag22/800/600",
+      "https://picsum.photos/seed/fandag23/800/600",
+      "https://picsum.photos/seed/fandag24/800/600"
+    ],
+    "spots_left": null,
+    "region": "Северная Осетия",
+    "source_url": "https://t.me/tvoyavisota/13299",
+    "source_post_id": "13299_2026-07-31",
+    "contact_phone": "+7 928 067 44 35 Зарина",
+    "contact_name": "Зарина",
+    "organizer": {
+      "id": 1,
+      "name": "Твоя Высота"
+    }
+  },
+  {
+    "id": 724,
+    "organizer_id": 1,
+    "source_id": 1,
+    "title": "Поход до водопада в ущелье Арнаджык",
+    "date_start": "2026-08-01",
+    "date_end": "2026-08-01",
+    "price": 1500,
+    "difficulty": "высокая",
+    "distance_km": 14,
+    "elevation_gain_m": 1000,
+    "departure_time": "08:00",
+    "departure_place": "ул.Кирова, 47 (напротив роддома)",
+    "description": "Маршрут в сторону Зарамага, ущелье Адайком и боковое его ответвление Арнаджык с посещением одноименного водопада на реке Арнагдон.",
+    "requirements": [
+      "вода",
+      "перекус",
+      "чай",
+      "головной убор",
+      "солнцезащитный крем"
+    ],
+    "includes": [],
+    "images": [
+      "https://picsum.photos/seed/fandag31/800/600",
+      "https://picsum.photos/seed/fandag32/800/600",
+      "https://picsum.photos/seed/fandag33/800/600",
+      "https://picsum.photos/seed/fandag34/800/600"
+    ],
+    "spots_left": null,
+    "region": "Зарамаг, Адайком, Арнаджык",
+    "source_url": "https://t.me/tvoyavisota/13388",
+    "source_post_id": "13388_2026-08-01",
+    "contact_phone": "+7 928 067 44 35 Зарина",
+    "contact_name": null,
+    "organizer": {
+      "id": 1,
+      "name": "Твоя Высота"
+    }
+  }
+]
