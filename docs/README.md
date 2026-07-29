@@ -1,4 +1,4 @@
-# Documentation — Flutter Template v3
+# Documentation — Fandag
 
 This is the central navigation hub for all project documentation. Use the task-to-doc mapping table below to find the right doc for your task.
 

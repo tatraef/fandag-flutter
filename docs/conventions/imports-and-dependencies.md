@@ -19,8 +19,8 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 // 3. project imports
-import 'package:flutter_template_v3/core/core.dart';
-import 'package:flutter_template_v3/features/auth/domain/domain.dart';
+import 'package:fandag/core/core.dart';
+import 'package:fandag/features/auth/domain/domain.dart';
 ```
 
 Within each group, imports are sorted alphabetically.
@@ -29,7 +29,7 @@ Within each group, imports are sorted alphabetically.
 
 ## No Relative Imports
 
-Always use `package:flutter_template_v3/...` — never relative paths.
+Always use `package:fandag/...` — never relative paths.
 
 ```dart
 // WRONG — relative import
@@ -37,8 +37,8 @@ import '../domain/entities/user.dart';
 import '../../core/network/network.dart';
 
 // CORRECT — package import
-import 'package:flutter_template_v3/features/auth/domain/domain.dart';
-import 'package:flutter_template_v3/core/network/network.dart';
+import 'package:fandag/features/auth/domain/domain.dart';
+import 'package:fandag/core/network/network.dart';
 ```
 
 Enforced by the `always_use_package_imports` lint rule.
@@ -51,11 +51,11 @@ Enforced by the `always_use_package_imports` lint rule.
 
 ```dart
 // ✅ CORRECT — import via layer barrel
-import 'package:flutter_template_v3/features/auth/domain/domain.dart';
-import 'package:flutter_template_v3/features/home/presentation/presentation.dart';
+import 'package:fandag/features/auth/domain/domain.dart';
+import 'package:fandag/features/home/presentation/presentation.dart';
 
 // ❌ WRONG — skip barrel and import individual file
-import 'package:flutter_template_v3/features/auth/domain/entities/user.dart';
+import 'package:fandag/features/auth/domain/entities/user.dart';
 ```
 
 **Rule:** Features always use barrel imports. Never import individual files from features.
@@ -70,24 +70,24 @@ Core modules are split into two categories:
 
 | Folder | Barrel File | Import Path |
 |--------|-------------|-------------|
-| `constants/` | `constants.dart` | `package:flutter_template_v3/core/constants/constants.dart` |
-| `extensions/` | `extensions.dart` | `package:flutter_template_v3/core/extensions/extensions.dart` |
-| `network/` | `network.dart` | `package:flutter_template_v3/core/network/network.dart` |
-| `router/` | `router.dart` | `package:flutter_template_v3/core/router/router.dart` |
-| `storage/` | `storage.dart` | `package:flutter_template_v3/core/storage/storage.dart` |
-| `theme/` | `theme.dart` | `package:flutter_template_v3/core/theme/theme.dart` |
-| `widgets/` | `widgets.dart` | `package:flutter_template_v3/core/widgets/widgets.dart` |
+| `constants/` | `constants.dart` | `package:fandag/core/constants/constants.dart` |
+| `extensions/` | `extensions.dart` | `package:fandag/core/extensions/extensions.dart` |
+| `network/` | `network.dart` | `package:fandag/core/network/network.dart` |
+| `router/` | `router.dart` | `package:fandag/core/router/router.dart` |
+| `storage/` | `storage.dart` | `package:fandag/core/storage/storage.dart` |
+| `theme/` | `theme.dart` | `package:fandag/core/theme/theme.dart` |
+| `widgets/` | `widgets.dart` | `package:fandag/core/widgets/widgets.dart` |
 
 **Example:**
 
 ```dart
 // ✅ CORRECT — use barrel
-import 'package:flutter_template_v3/core/network/network.dart';
-import 'package:flutter_template_v3/core/theme/theme.dart';
+import 'package:fandag/core/network/network.dart';
+import 'package:fandag/core/theme/theme.dart';
 
 // ❌ WRONG — skip barrel
-import 'package:flutter_template_v3/core/network/api_client.dart';
-import 'package:flutter_template_v3/core/theme/app_theme.dart';
+import 'package:fandag/core/network/api_client.dart';
+import 'package:fandag/core/theme/app_theme.dart';
 ```
 
 ---
@@ -96,23 +96,23 @@ import 'package:flutter_template_v3/core/theme/app_theme.dart';
 
 | Folder | Import Directly |
 |--------|----------------|
-| `app/` | `package:flutter_template_v3/core/app/app_reloader.dart` |
-| `environment/` | `package:flutter_template_v3/core/environment/app_config.dart` |
-| | `package:flutter_template_v3/core/environment/secrets.dart` |
-| `exceptions/` | `package:flutter_template_v3/core/exceptions/app_exception.dart` |
-| `inspector/` | `package:flutter_template_v3/core/inspector/inspector.dart` |
-| `utils/` | `package:flutter_template_v3/core/utils/debug_print.dart` |
+| `app/` | `package:fandag/core/app/app_reloader.dart` |
+| `environment/` | `package:fandag/core/environment/app_config.dart` |
+| | `package:fandag/core/environment/secrets.dart` |
+| `exceptions/` | `package:fandag/core/exceptions/app_exception.dart` |
+| `inspector/` | `package:fandag/core/inspector/inspector.dart` |
+| `utils/` | `package:fandag/core/utils/debug_print.dart` |
 
 **Example:**
 
 ```dart
 // ✅ CORRECT — import specific file (no barrel exists)
-import 'package:flutter_template_v3/core/utils/debug_print.dart';
-import 'package:flutter_template_v3/core/environment/app_config.dart';
+import 'package:fandag/core/utils/debug_print.dart';
+import 'package:fandag/core/environment/app_config.dart';
 
 // ❌ WRONG — these barrels don't exist
-import 'package:flutter_template_v3/core/utils/utils.dart';  // No such file!
-import 'package:flutter_template_v3/core/environment/environment.dart';  // No such file!
+import 'package:fandag/core/utils/utils.dart';  // No such file!
+import 'package:fandag/core/environment/environment.dart';  // No such file!
 ```
 
 ---
@@ -121,12 +121,12 @@ import 'package:flutter_template_v3/core/environment/environment.dart';  // No s
 
 ```dart
 // ✅ CORRECT — importing 3+ core modules
-import 'package:flutter_template_v3/core/core.dart';
+import 'package:fandag/core/core.dart';
 // Provides: constants, extensions, network, router, storage, theme, widgets, exceptions, etc.
 
 // ❌ AVOID — using aggregate for single module
-import 'package:flutter_template_v3/core/core.dart';  // Just to get ApiClient
-// Better: import 'package:flutter_template_v3/core/network/network.dart';
+import 'package:fandag/core/core.dart';  // Just to get ApiClient
+// Better: import 'package:fandag/core/network/network.dart';
 ```
 
 **Decision rule:**
@@ -139,10 +139,10 @@ import 'package:flutter_template_v3/core/core.dart';  // Just to get ApiClient
 
 ```dart
 // ✅ CORRECT — import generated translations directly
-import 'package:flutter_template_v3/core/translations/generated/translations.g.dart';
+import 'package:fandag/core/translations/generated/translations.g.dart';
 
 // ❌ WRONG — no barrel exists for translations
-import 'package:flutter_template_v3/core/translations/translations.dart';  // Doesn't exist
+import 'package:fandag/core/translations/translations.dart';  // Doesn't exist
 ```
 
 ---
@@ -153,13 +153,13 @@ When feature A needs something from feature B, import **only** B's domain barrel
 
 ```dart
 // CORRECT — import domain barrel of another feature
-import 'package:flutter_template_v3/features/auth/domain/domain.dart';
+import 'package:fandag/features/auth/domain/domain.dart';
 
 // WRONG — importing data layer of another feature
-import 'package:flutter_template_v3/features/auth/data/data.dart';
+import 'package:fandag/features/auth/data/data.dart';
 
 // WRONG — importing presentation layer of another feature
-import 'package:flutter_template_v3/features/auth/presentation/presentation.dart';
+import 'package:fandag/features/auth/presentation/presentation.dart';
 ```
 
 **Exception:** `app_router.dart` imports presentation barrels to reference page widgets for route builders. This is the only legitimate cross-feature presentation import.

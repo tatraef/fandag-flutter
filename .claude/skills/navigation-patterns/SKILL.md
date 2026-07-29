@@ -119,7 +119,7 @@ context.push(AppRoute.profile.path);
 ### Required imports
 
 ```dart
-import 'package:flutter_template_v3/core/router/router.dart'; // AppRoute
+import 'package:fandag/core/router/router.dart'; // AppRoute
 import 'package:go_router/go_router.dart'; // context.go(), context.push()
 ```
 

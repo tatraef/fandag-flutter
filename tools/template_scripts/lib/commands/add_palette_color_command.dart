@@ -99,7 +99,7 @@ class AddPaletteColorCommand extends ScriptCommand<void> {
 
     // Build new YAML content
     final buffer = StringBuffer();
-    buffer.writeln('# Flutter Template v3 Color Palette');
+    buffer.writeln('# Fandag Color Palette');
     buffer.writeln('# Generated color constants for AppColors class');
     buffer.writeln();
     buffer.writeln('sections:');

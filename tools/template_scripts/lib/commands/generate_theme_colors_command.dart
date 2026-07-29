@@ -87,7 +87,7 @@ class GenerateThemeColorsCommand extends ScriptCommand<void> {
   void _writeHeader(StringBuffer buffer) {
     buffer.writeln("import 'package:flutter/material.dart';");
     buffer.writeln(
-      "import 'package:flutter_template_v3/core/theme/app_colors.dart';",
+      "import 'package:fandag/core/theme/app_colors.dart';",
     );
     buffer.writeln();
     buffer.writeln(

@@ -1,5 +1,5 @@
 name: template_scripts
-description: CLI toolkit for flutter_template_v3 code generation (theme, fonts, feature scaffolding)
+description: CLI toolkit for fandag code generation (theme, fonts, feature scaffolding)
 version: 1.0.0
 publish_to: none
 

@@ -22,7 +22,7 @@ Does the widget need Riverpod state?
 
 ```dart
 import 'package:flutter/material.dart';
-import 'package:flutter_template_v3/core/core.dart';
+import 'package:fandag/core/core.dart';
 
 class FeatureCard extends StatelessWidget {
   const FeatureCard({
@@ -247,5 +247,5 @@ PostCard({required this.post, super.key});  // WRONG — missing const
 
 // BAD: using relative imports
 import '../../../domain/entities/post.dart';
-// CORRECT: import 'package:flutter_template_v3/features/home/domain/domain.dart';
+// CORRECT: import 'package:fandag/features/home/domain/domain.dart';
 ```

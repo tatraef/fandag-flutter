@@ -207,7 +207,7 @@ return dtos.map((PostDto dto) => dto.toDomain()).toList();
 
 ```dart
 // domain/repositories/auth_repository.dart
-import 'package:flutter_template_v3/features/auth/data/models/models.dart'; // WRONG
+import 'package:fandag/features/auth/data/models/models.dart'; // WRONG
 // Domain must NEVER import from data layer
 ```
 
@@ -335,8 +335,8 @@ See full: `lib/features/auth/data/repositories/auth_repository_impl.dart`, `lib/
 ## Mock Repository
 
 ```dart
-// lib/features/auth/data/repositories/mock_auth_repository.dart
-class MockAuthRepository implements AuthRepository {
+// lib/features/auth/data/repositories/auth_repository_mock.dart
+class AuthRepositoryMock implements AuthRepository {
   static const Duration _simulatedDelay = Duration(milliseconds: 500);
   User? _currentUser;
 
@@ -357,7 +357,7 @@ class MockAuthRepository implements AuthRepository {
 }
 ```
 
-See full: `lib/features/auth/data/repositories/mock_auth_repository.dart`
+See full: `lib/features/auth/data/repositories/auth_repository_mock.dart`
 
 ---
 

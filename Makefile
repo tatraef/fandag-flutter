@@ -1,4 +1,4 @@
-# Flutter Template v3 — Makefile
+# Fandag — Makefile
 # All project commands in one place
 
 # Colors
@@ -16,7 +16,7 @@ DART := $(FVM) dart
 
 ## —— Help ——————————————————————————————————————————
 help: ## Show all available commands
-	@echo "$(CYAN)Flutter Template v3 — Available commands:$(RESET)"
+	@echo "$(CYAN)Fandag — Available commands:$(RESET)"
 	@echo ""
 	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | sort | awk 'BEGIN {FS = ":.*?## "}; {printf "  $(GREEN)%-20s$(RESET) %s\n", $$1, $$2}'
 

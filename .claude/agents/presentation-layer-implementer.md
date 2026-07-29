@@ -70,9 +70,9 @@ Wires datasource → repository using `@Riverpod(keepAlive: true)`.
 
 ```dart
 import 'package:riverpod_annotation/riverpod_annotation.dart';
-import 'package:flutter_template_v3/core/network/network.dart';
-import 'package:flutter_template_v3/features/<feature>/data/data.dart';
-import 'package:flutter_template_v3/features/<feature>/domain/domain.dart';
+import 'package:fandag/core/network/network.dart';
+import 'package:fandag/features/<feature>/data/data.dart';
+import 'package:fandag/features/<feature>/domain/domain.dart';
 
 part '<feature>_providers.g.dart';
 
@@ -106,8 +106,8 @@ Use the decision tree from `docs/presentation/controllers.md`:
 ```dart
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
-import 'package:flutter_template_v3/features/<feature>/domain/domain.dart';
-import 'package:flutter_template_v3/features/<feature>/presentation/controllers/controllers.dart';
+import 'package:fandag/features/<feature>/domain/domain.dart';
+import 'package:fandag/features/<feature>/presentation/controllers/controllers.dart';
 
 part '<name>_controller.freezed.dart';
 part '<name>_controller.g.dart';
@@ -201,8 +201,8 @@ Use `ConsumerWidget` or `ConsumerStatefulWidget`.
 ```dart
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:flutter_template_v3/features/<feature>/domain/domain.dart';
-import 'package:flutter_template_v3/features/<feature>/presentation/controllers/controllers.dart';
+import 'package:fandag/features/<feature>/domain/domain.dart';
+import 'package:fandag/features/<feature>/presentation/controllers/controllers.dart';
 
 class FeatureListPage extends ConsumerWidget {
   const FeatureListPage({super.key});
@@ -321,11 +321,11 @@ Tests are recommended but do not block completion.
 
 ## Imports
 
-- Always use `package:flutter_template_v3/...` (no relative imports)
+- Always use `package:fandag/...` (no relative imports)
 - Order: `dart:` → `package:` → project packages
-- Import domain via barrel: `package:flutter_template_v3/features/<feature>/domain/domain.dart`
-- Import data via barrel: `package:flutter_template_v3/features/<feature>/data/data.dart`
-- Import controllers via sub-barrel: `package:flutter_template_v3/features/<feature>/presentation/controllers/controllers.dart`
+- Import domain via barrel: `package:fandag/features/<feature>/domain/domain.dart`
+- Import data via barrel: `package:fandag/features/<feature>/data/data.dart`
+- Import controllers via sub-barrel: `package:fandag/features/<feature>/presentation/controllers/controllers.dart`
 
 ## Code Style
 
@@ -360,6 +360,6 @@ Fix any warnings or errors before completing.
 - [ ] No widget functions — only widget classes
 - [ ] Sub-barrels: `controllers/controllers.dart`, `pages/pages.dart`, `widgets/widgets.dart`
 - [ ] Layer barrel: `presentation/presentation.dart` exports only sub-barrels
-- [ ] All files use `package:flutter_template_v3/...` imports
+- [ ] All files use `package:fandag/...` imports
 - [ ] `make gen` executed (auto on stop)
 - [ ] `make analyze` passes with no warnings

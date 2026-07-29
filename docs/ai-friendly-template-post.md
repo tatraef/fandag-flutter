@@ -1,4 +1,4 @@
-# Flutter Template v3: AI-Friendly архитектура
+# Fandag: AI-Friendly архитектура
 
 ## Зачем новый шаблон?
 
@@ -108,7 +108,7 @@ class OrderListController extends _$OrderListController {
 **v3:** Формализованные правила на каждый аспект:
 - **Barrel-файлы:** двухуровневая иерархия (sub-barrel → layer barrel). Никогда не экспортировать файлы из layer barrel напрямую.
 - **Freezed-модели:** domain entity без JSON, DTO с `fromJson` + `toDomain()`. Только `abstract class`.
-- **Импорты:** только абсолютные (`package:flutter_template_v3/...`). Порядок: `dart:` → `package:` → project.
+- **Импорты:** только абсолютные (`package:fandag/...`). Порядок: `dart:` → `package:` → project.
 - **Стиль:** explicit types, single quotes, `const`/`final` везде, пустая строка перед `return`.
 
 **Почему?** AI силен в следовании правилам, если правила чёткие. Размытые конвенции = непредсказуемый результат. Жёсткие конвенции = AI генерирует код, который не нужно переписывать.

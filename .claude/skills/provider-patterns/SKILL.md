@@ -12,9 +12,9 @@ Providers wire up **datasources → repositories** using Riverpod codegen. They 
 
 ```dart
 import 'package:riverpod_annotation/riverpod_annotation.dart';
-import 'package:flutter_template_v3/core/network/network.dart';
-import 'package:flutter_template_v3/features/<feature>/data/data.dart';
-import 'package:flutter_template_v3/features/<feature>/domain/domain.dart';
+import 'package:fandag/core/network/network.dart';
+import 'package:fandag/features/<feature>/data/data.dart';
+import 'package:fandag/features/<feature>/domain/domain.dart';
 
 part '<feature>_providers.g.dart';
 
@@ -51,9 +51,9 @@ FeatureRepository featureRepository(Ref ref) {
 // lib/features/auth/presentation/controllers/auth_providers.dart
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
-import 'package:flutter_template_v3/core/core.dart';
-import 'package:flutter_template_v3/features/auth/data/data.dart';
-import 'package:flutter_template_v3/features/auth/domain/domain.dart';
+import 'package:fandag/core/core.dart';
+import 'package:fandag/features/auth/data/data.dart';
+import 'package:fandag/features/auth/domain/domain.dart';
 
 part 'auth_providers.g.dart';
 
@@ -67,7 +67,7 @@ AuthRemoteDataSource authRemoteDataSource(Ref ref) {
 @Riverpod(keepAlive: true)
 AuthRepository authRepository(Ref ref) {
   if (AppConfig.useMock) {
-    return MockAuthRepository();
+    return AuthRepositoryMock();
   }
 
   final AuthRemoteDataSource dataSource = ref.watch(
@@ -133,7 +133,7 @@ Use `AppConfig.useMock` to switch between real and mock implementations:
 @Riverpod(keepAlive: true)
 FeatureRepository featureRepository(Ref ref) {
   if (AppConfig.useMock) {
-    return MockFeatureRepository();
+    return FeatureRepositoryMock();
   }
 
   final FeatureRemoteDataSource dataSource = ref.watch(

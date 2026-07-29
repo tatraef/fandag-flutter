@@ -84,7 +84,7 @@ Rules:
 Abstract classes defining the contract.
 
 ```dart
-import 'package:flutter_template_v3/features/<feature>/domain/entities/entities.dart';
+import 'package:fandag/features/<feature>/domain/entities/entities.dart';
 
 abstract class FeatureRepository {
   Future<List<Entity>> getEntities();
@@ -149,7 +149,7 @@ Tests are recommended but do not block completion.
 
 ## Imports
 
-- Always use `package:flutter_template_v3/...` (no relative imports)
+- Always use `package:fandag/...` (no relative imports)
 - Order: `dart:` → `package:` → project packages
 
 ## Code Style
@@ -178,5 +178,5 @@ Fix any warnings or errors before completing.
 - [ ] Repository interface: `abstract class` with domain return types
 - [ ] Sub-barrels: `entities/entities.dart`, `repositories/repositories.dart`
 - [ ] Layer barrel: `domain/domain.dart` exports only sub-barrels
-- [ ] All files use `package:flutter_template_v3/...` imports
+- [ ] All files use `package:fandag/...` imports
 - [ ] `make analyze` passes with no warnings

@@ -1,4 +1,4 @@
-# flutter_template_v3
+# fandag
 
 Production-ready шаблон Flutter-приложения на **Riverpod-архитектуре** (Feature-First, MVVM + Repository).
 

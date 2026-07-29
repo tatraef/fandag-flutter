@@ -11,9 +11,9 @@ Repository implementations live in the **data layer** and bridge datasources to 
 ## Canonical Template
 
 ```dart
-import 'package:flutter_template_v3/features/<feature>/data/datasources/datasources.dart';
-import 'package:flutter_template_v3/features/<feature>/data/models/models.dart';
-import 'package:flutter_template_v3/features/<feature>/domain/domain.dart';
+import 'package:fandag/features/<feature>/data/datasources/datasources.dart';
+import 'package:fandag/features/<feature>/data/models/models.dart';
+import 'package:fandag/features/<feature>/domain/domain.dart';
 
 class FeatureRepositoryImpl implements FeatureRepository {
   FeatureRepositoryImpl({required FeatureRemoteDataSource remoteDataSource})
@@ -60,9 +60,9 @@ class FeatureRepositoryImpl implements FeatureRepository {
 
 ```dart
 // lib/features/home/data/repositories/home_repository_impl.dart
-import 'package:flutter_template_v3/features/home/data/datasources/datasources.dart';
-import 'package:flutter_template_v3/features/home/data/models/models.dart';
-import 'package:flutter_template_v3/features/home/domain/domain.dart';
+import 'package:fandag/features/home/data/datasources/datasources.dart';
+import 'package:fandag/features/home/data/models/models.dart';
+import 'package:fandag/features/home/domain/domain.dart';
 
 class HomeRepositoryImpl implements HomeRepository {
   HomeRepositoryImpl({required HomeRemoteDataSource remoteDataSource})
@@ -108,7 +108,7 @@ class HomeRepositoryImpl implements HomeRepository {
 ### Sign Out — Ignore API Errors
 
 ```dart
-import 'package:flutter_template_v3/core/network/network.dart';  // for ApiException
+import 'package:fandag/core/network/network.dart';  // for ApiException
 
 @override
 Future<void> signOut() async {

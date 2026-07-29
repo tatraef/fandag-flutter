@@ -1,4 +1,4 @@
-# Test Coverage Report — Flutter Template v3
+# Test Coverage Report — Fandag
 
 Generated: 2024-03-11
 

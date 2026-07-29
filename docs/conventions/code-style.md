@@ -283,17 +283,17 @@ The following rules are enabled:
 
 ### `always_use_package_imports`
 
-Always use `package:flutter_template_v3/...` imports. Never use relative imports (`../`).
+Always use `package:fandag/...` imports. Never use relative imports (`../`).
 
 ```dart
 // WRONG -- relative import
 import '../domain/entities/user.dart';
 
 // WRONG -- direct file import (use barrel)
-import 'package:flutter_template_v3/features/auth/domain/entities/user.dart';
+import 'package:fandag/features/auth/domain/entities/user.dart';
 
 // CORRECT -- package import via barrel
-import 'package:flutter_template_v3/features/auth/domain/domain.dart';
+import 'package:fandag/features/auth/domain/domain.dart';
 ```
 
 ### `directives_ordering`

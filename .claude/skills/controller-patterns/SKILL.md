@@ -28,7 +28,7 @@ For forms with validation, loading state, and submission.
 ```dart
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
-import 'package:flutter_template_v3/features/<feature>/presentation/controllers/controllers.dart';
+import 'package:fandag/features/<feature>/presentation/controllers/controllers.dart';
 
 part '<name>_controller.freezed.dart';
 part '<name>_controller.g.dart';
@@ -140,8 +140,8 @@ For data fetched from API with loading/error/data states.
 
 ```dart
 import 'package:riverpod_annotation/riverpod_annotation.dart';
-import 'package:flutter_template_v3/features/<feature>/domain/domain.dart';
-import 'package:flutter_template_v3/features/<feature>/presentation/controllers/controllers.dart';
+import 'package:fandag/features/<feature>/domain/domain.dart';
+import 'package:fandag/features/<feature>/presentation/controllers/controllers.dart';
 
 part '<name>_controller.g.dart';
 
@@ -231,7 +231,7 @@ For app-wide state that persists across navigation (auth, settings, theme).
 ```dart
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
-import 'package:flutter_template_v3/features/<feature>/presentation/controllers/controllers.dart';
+import 'package:fandag/features/<feature>/presentation/controllers/controllers.dart';
 
 part '<name>_controller.freezed.dart';
 part '<name>_controller.g.dart';
@@ -361,7 +361,7 @@ class HomeController extends _$HomeController { ... }
 **Complex feature (like auth)** — separate `auth_providers.dart` file, controllers import via barrel:
 ```dart
 // sign_in_controller.dart
-import 'package:flutter_template_v3/features/auth/presentation/controllers/controllers.dart';
+import 'package:fandag/features/auth/presentation/controllers/controllers.dart';
 // ↑ accesses authRepositoryProvider via controllers barrel
 ```
 

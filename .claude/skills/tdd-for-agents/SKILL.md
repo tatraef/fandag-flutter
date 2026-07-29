@@ -70,7 +70,7 @@ make test  # Run all tests
 
 ```dart
 import 'package:flutter_test/flutter_test.dart';
-import 'package:flutter_template_v3/features/<feature>/domain/domain.dart';
+import 'package:fandag/features/<feature>/domain/domain.dart';
 
 void main() {
   group('EntityName', () {
@@ -174,8 +174,8 @@ void main() {
 
 ```dart
 import 'package:flutter_test/flutter_test.dart';
-import 'package:flutter_template_v3/features/<feature>/data/data.dart';
-import 'package:flutter_template_v3/features/<feature>/domain/domain.dart';
+import 'package:fandag/features/<feature>/data/data.dart';
+import 'package:fandag/features/<feature>/domain/domain.dart';
 
 void main() {
   group('EntityDto', () {
@@ -232,9 +232,9 @@ void main() {
 ```dart
 import 'package:dio/dio.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:flutter_template_v3/core/network/network.dart';
-import 'package:flutter_template_v3/features/<feature>/data/data.dart';
-import 'package:flutter_template_v3/features/<feature>/domain/domain.dart';
+import 'package:fandag/core/network/network.dart';
+import 'package:fandag/features/<feature>/data/data.dart';
+import 'package:fandag/features/<feature>/domain/domain.dart';
 
 /// Simple manual mock — no mockito dependency needed
 class MockFeatureRemoteDataSource implements FeatureRemoteDataSource {
@@ -320,7 +320,7 @@ void main() {
 ```dart
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:flutter_template_v3/features/<feature>/presentation/presentation.dart';
+import 'package:fandag/features/<feature>/presentation/presentation.dart';
 
 void main() {
   group('XController', () {
@@ -433,7 +433,7 @@ void main() {
 3. **Descriptive test names**: `'should create with required fields'`
 4. **`setUp` / `tearDown`** for container lifecycle
 5. **Explicit types** on all variables
-6. **`package:flutter_template_v3/...`** imports (no relative)
+6. **`package:fandag/...`** imports (no relative)
 7. **Import from barrels**: `domain.dart`, `presentation.dart`
 
 ## What to Test
