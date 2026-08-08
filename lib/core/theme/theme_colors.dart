@@ -17,6 +17,11 @@ class ThemeColors extends ThemeExtension<ThemeColors> {
     required this.error,
     required this.success,
     required this.warning,
+    required this.difficultyEasy,
+    required this.difficultyBelowMedium,
+    required this.difficultyMedium,
+    required this.difficultyAboveMedium,
+    required this.difficultyHard,
   });
 
   final Color textPrimary;
@@ -33,6 +38,11 @@ class ThemeColors extends ThemeExtension<ThemeColors> {
   final Color error;
   final Color success;
   final Color warning;
+  final Color difficultyEasy;
+  final Color difficultyBelowMedium;
+  final Color difficultyMedium;
+  final Color difficultyAboveMedium;
+  final Color difficultyHard;
 
   static const ThemeColors light = ThemeColors(
     textPrimary: AppColors.grey900,
@@ -49,6 +59,11 @@ class ThemeColors extends ThemeExtension<ThemeColors> {
     error: AppColors.error,
     success: AppColors.success,
     warning: AppColors.warning,
+    difficultyEasy: AppColors.success,
+    difficultyBelowMedium: AppColors.lime,
+    difficultyMedium: AppColors.warning,
+    difficultyAboveMedium: AppColors.orange,
+    difficultyHard: AppColors.error,
   );
 
   static const ThemeColors dark = ThemeColors(
@@ -66,6 +81,11 @@ class ThemeColors extends ThemeExtension<ThemeColors> {
     error: AppColors.errorLight,
     success: AppColors.success,
     warning: AppColors.warning,
+    difficultyEasy: AppColors.success,
+    difficultyBelowMedium: AppColors.lime,
+    difficultyMedium: AppColors.warning,
+    difficultyAboveMedium: AppColors.orange,
+    difficultyHard: AppColors.errorLight,
   );
 
   @override
@@ -84,6 +104,11 @@ class ThemeColors extends ThemeExtension<ThemeColors> {
     Color? error,
     Color? success,
     Color? warning,
+    Color? difficultyEasy,
+    Color? difficultyBelowMedium,
+    Color? difficultyMedium,
+    Color? difficultyAboveMedium,
+    Color? difficultyHard,
   }) {
     return ThemeColors(
       textPrimary: textPrimary ?? this.textPrimary,
@@ -100,6 +125,11 @@ class ThemeColors extends ThemeExtension<ThemeColors> {
       error: error ?? this.error,
       success: success ?? this.success,
       warning: warning ?? this.warning,
+      difficultyEasy: difficultyEasy ?? this.difficultyEasy,
+      difficultyBelowMedium: difficultyBelowMedium ?? this.difficultyBelowMedium,
+      difficultyMedium: difficultyMedium ?? this.difficultyMedium,
+      difficultyAboveMedium: difficultyAboveMedium ?? this.difficultyAboveMedium,
+      difficultyHard: difficultyHard ?? this.difficultyHard,
     );
   }
 
@@ -136,6 +166,23 @@ class ThemeColors extends ThemeExtension<ThemeColors> {
       error: Color.lerp(error, other.error, t)!,
       success: Color.lerp(success, other.success, t)!,
       warning: Color.lerp(warning, other.warning, t)!,
+      difficultyEasy: Color.lerp(difficultyEasy, other.difficultyEasy, t)!,
+      difficultyBelowMedium: Color.lerp(
+        difficultyBelowMedium,
+        other.difficultyBelowMedium,
+        t,
+      )!,
+      difficultyMedium: Color.lerp(
+        difficultyMedium,
+        other.difficultyMedium,
+        t,
+      )!,
+      difficultyAboveMedium: Color.lerp(
+        difficultyAboveMedium,
+        other.difficultyAboveMedium,
+        t,
+      )!,
+      difficultyHard: Color.lerp(difficultyHard, other.difficultyHard, t)!,
     );
   }
 }

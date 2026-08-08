@@ -20,10 +20,7 @@ void main() {
       expect(hikes.first.organizer.name, 'Твоя Высота');
       expect(hikes.first.images, isNotEmpty);
       for (int i = 1; i < hikes.length; i++) {
-        expect(
-          hikes[i].dateStart.isBefore(hikes[i - 1].dateStart),
-          isFalse,
-        );
+        expect(hikes[i].dateStart.isBefore(hikes[i - 1].dateStart), isFalse);
       }
     });
 
@@ -32,7 +29,7 @@ void main() {
 
       final List<Hike> hard = await repository.getHikes(
         filters: const HikeFilters(
-          difficulties: <String>{HikeDifficulty.hard},
+          difficulties: <HikeDifficulty>{HikeDifficulty.hard},
         ),
         limit: 20,
         offset: 0,

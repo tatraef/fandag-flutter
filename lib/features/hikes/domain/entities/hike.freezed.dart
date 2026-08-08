@@ -14,7 +14,7 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$Hike {
 
- int get id; String get title; DateTime get dateStart; String get sourceUrl; Organizer get organizer; List<String> get requirements; List<String> get includes; List<String> get images; DateTime? get dateEnd; int? get price; String? get difficulty; double? get distanceKm; int? get elevationGainM; String? get departureTime; String? get departurePlace; String? get description; int? get spotsLeft; String? get region; String? get contactPhone; String? get contactName;
+ int get id; String get title; DateTime get dateStart; String get sourceUrl; Organizer get organizer; List<String> get requirements; List<String> get includes; List<String> get images; DateTime? get dateEnd; int? get price; HikeDifficulty? get difficulty; double? get distanceKm; int? get elevationGainM; String? get departureTime; String? get departurePlace; String? get description; int? get spotsLeft; String? get region; String? get contactPhone; String? get contactName;
 /// Create a copy of Hike
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -45,7 +45,7 @@ abstract mixin class $HikeCopyWith<$Res>  {
   factory $HikeCopyWith(Hike value, $Res Function(Hike) _then) = _$HikeCopyWithImpl;
 @useResult
 $Res call({
- int id, String title, DateTime dateStart, String sourceUrl, Organizer organizer, List<String> requirements, List<String> includes, List<String> images, DateTime? dateEnd, int? price, String? difficulty, double? distanceKm, int? elevationGainM, String? departureTime, String? departurePlace, String? description, int? spotsLeft, String? region, String? contactPhone, String? contactName
+ int id, String title, DateTime dateStart, String sourceUrl, Organizer organizer, List<String> requirements, List<String> includes, List<String> images, DateTime? dateEnd, int? price, HikeDifficulty? difficulty, double? distanceKm, int? elevationGainM, String? departureTime, String? departurePlace, String? description, int? spotsLeft, String? region, String? contactPhone, String? contactName
 });
 
 
@@ -75,7 +75,7 @@ as List<String>,images: null == images ? _self.images : images // ignore: cast_n
 as List<String>,dateEnd: freezed == dateEnd ? _self.dateEnd : dateEnd // ignore: cast_nullable_to_non_nullable
 as DateTime?,price: freezed == price ? _self.price : price // ignore: cast_nullable_to_non_nullable
 as int?,difficulty: freezed == difficulty ? _self.difficulty : difficulty // ignore: cast_nullable_to_non_nullable
-as String?,distanceKm: freezed == distanceKm ? _self.distanceKm : distanceKm // ignore: cast_nullable_to_non_nullable
+as HikeDifficulty?,distanceKm: freezed == distanceKm ? _self.distanceKm : distanceKm // ignore: cast_nullable_to_non_nullable
 as double?,elevationGainM: freezed == elevationGainM ? _self.elevationGainM : elevationGainM // ignore: cast_nullable_to_non_nullable
 as int?,departureTime: freezed == departureTime ? _self.departureTime : departureTime // ignore: cast_nullable_to_non_nullable
 as String?,departurePlace: freezed == departurePlace ? _self.departurePlace : departurePlace // ignore: cast_nullable_to_non_nullable
@@ -178,7 +178,7 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( int id,  String title,  DateTime dateStart,  String sourceUrl,  Organizer organizer,  List<String> requirements,  List<String> includes,  List<String> images,  DateTime? dateEnd,  int? price,  String? difficulty,  double? distanceKm,  int? elevationGainM,  String? departureTime,  String? departurePlace,  String? description,  int? spotsLeft,  String? region,  String? contactPhone,  String? contactName)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( int id,  String title,  DateTime dateStart,  String sourceUrl,  Organizer organizer,  List<String> requirements,  List<String> includes,  List<String> images,  DateTime? dateEnd,  int? price,  HikeDifficulty? difficulty,  double? distanceKm,  int? elevationGainM,  String? departureTime,  String? departurePlace,  String? description,  int? spotsLeft,  String? region,  String? contactPhone,  String? contactName)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _Hike() when $default != null:
 return $default(_that.id,_that.title,_that.dateStart,_that.sourceUrl,_that.organizer,_that.requirements,_that.includes,_that.images,_that.dateEnd,_that.price,_that.difficulty,_that.distanceKm,_that.elevationGainM,_that.departureTime,_that.departurePlace,_that.description,_that.spotsLeft,_that.region,_that.contactPhone,_that.contactName);case _:
@@ -199,7 +199,7 @@ return $default(_that.id,_that.title,_that.dateStart,_that.sourceUrl,_that.organ
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( int id,  String title,  DateTime dateStart,  String sourceUrl,  Organizer organizer,  List<String> requirements,  List<String> includes,  List<String> images,  DateTime? dateEnd,  int? price,  String? difficulty,  double? distanceKm,  int? elevationGainM,  String? departureTime,  String? departurePlace,  String? description,  int? spotsLeft,  String? region,  String? contactPhone,  String? contactName)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( int id,  String title,  DateTime dateStart,  String sourceUrl,  Organizer organizer,  List<String> requirements,  List<String> includes,  List<String> images,  DateTime? dateEnd,  int? price,  HikeDifficulty? difficulty,  double? distanceKm,  int? elevationGainM,  String? departureTime,  String? departurePlace,  String? description,  int? spotsLeft,  String? region,  String? contactPhone,  String? contactName)  $default,) {final _that = this;
 switch (_that) {
 case _Hike():
 return $default(_that.id,_that.title,_that.dateStart,_that.sourceUrl,_that.organizer,_that.requirements,_that.includes,_that.images,_that.dateEnd,_that.price,_that.difficulty,_that.distanceKm,_that.elevationGainM,_that.departureTime,_that.departurePlace,_that.description,_that.spotsLeft,_that.region,_that.contactPhone,_that.contactName);case _:
@@ -219,7 +219,7 @@ return $default(_that.id,_that.title,_that.dateStart,_that.sourceUrl,_that.organ
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( int id,  String title,  DateTime dateStart,  String sourceUrl,  Organizer organizer,  List<String> requirements,  List<String> includes,  List<String> images,  DateTime? dateEnd,  int? price,  String? difficulty,  double? distanceKm,  int? elevationGainM,  String? departureTime,  String? departurePlace,  String? description,  int? spotsLeft,  String? region,  String? contactPhone,  String? contactName)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( int id,  String title,  DateTime dateStart,  String sourceUrl,  Organizer organizer,  List<String> requirements,  List<String> includes,  List<String> images,  DateTime? dateEnd,  int? price,  HikeDifficulty? difficulty,  double? distanceKm,  int? elevationGainM,  String? departureTime,  String? departurePlace,  String? description,  int? spotsLeft,  String? region,  String? contactPhone,  String? contactName)?  $default,) {final _that = this;
 switch (_that) {
 case _Hike() when $default != null:
 return $default(_that.id,_that.title,_that.dateStart,_that.sourceUrl,_that.organizer,_that.requirements,_that.includes,_that.images,_that.dateEnd,_that.price,_that.difficulty,_that.distanceKm,_that.elevationGainM,_that.departureTime,_that.departurePlace,_that.description,_that.spotsLeft,_that.region,_that.contactPhone,_that.contactName);case _:
@@ -265,7 +265,7 @@ class _Hike implements Hike {
 
 @override final  DateTime? dateEnd;
 @override final  int? price;
-@override final  String? difficulty;
+@override final  HikeDifficulty? difficulty;
 @override final  double? distanceKm;
 @override final  int? elevationGainM;
 @override final  String? departureTime;
@@ -306,7 +306,7 @@ abstract mixin class _$HikeCopyWith<$Res> implements $HikeCopyWith<$Res> {
   factory _$HikeCopyWith(_Hike value, $Res Function(_Hike) _then) = __$HikeCopyWithImpl;
 @override @useResult
 $Res call({
- int id, String title, DateTime dateStart, String sourceUrl, Organizer organizer, List<String> requirements, List<String> includes, List<String> images, DateTime? dateEnd, int? price, String? difficulty, double? distanceKm, int? elevationGainM, String? departureTime, String? departurePlace, String? description, int? spotsLeft, String? region, String? contactPhone, String? contactName
+ int id, String title, DateTime dateStart, String sourceUrl, Organizer organizer, List<String> requirements, List<String> includes, List<String> images, DateTime? dateEnd, int? price, HikeDifficulty? difficulty, double? distanceKm, int? elevationGainM, String? departureTime, String? departurePlace, String? description, int? spotsLeft, String? region, String? contactPhone, String? contactName
 });
 
 
@@ -336,7 +336,7 @@ as List<String>,images: null == images ? _self._images : images // ignore: cast_
 as List<String>,dateEnd: freezed == dateEnd ? _self.dateEnd : dateEnd // ignore: cast_nullable_to_non_nullable
 as DateTime?,price: freezed == price ? _self.price : price // ignore: cast_nullable_to_non_nullable
 as int?,difficulty: freezed == difficulty ? _self.difficulty : difficulty // ignore: cast_nullable_to_non_nullable
-as String?,distanceKm: freezed == distanceKm ? _self.distanceKm : distanceKm // ignore: cast_nullable_to_non_nullable
+as HikeDifficulty?,distanceKm: freezed == distanceKm ? _self.distanceKm : distanceKm // ignore: cast_nullable_to_non_nullable
 as double?,elevationGainM: freezed == elevationGainM ? _self.elevationGainM : elevationGainM // ignore: cast_nullable_to_non_nullable
 as int?,departureTime: freezed == departureTime ? _self.departureTime : departureTime // ignore: cast_nullable_to_non_nullable
 as String?,departurePlace: freezed == departurePlace ? _self.departurePlace : departurePlace // ignore: cast_nullable_to_non_nullable

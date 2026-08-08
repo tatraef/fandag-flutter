@@ -96,7 +96,7 @@ final class HikeRepositoryProvider
   }
 }
 
-String _$hikeRepositoryHash() => r'77062370662f7fc07a774ebf0d1d5f2d9858eba8';
+String _$hikeRepositoryHash() => r'bd34eaf26328da8745d2c277805db8b260458d67';
 
 /// All organizers — used to populate the filter dropdown.
 

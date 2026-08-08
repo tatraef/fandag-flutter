@@ -11,7 +11,7 @@ void main() {
         'date_start': '2025-06-11',
         'date_end': '2025-06-11',
         'price': 1500,
-        'difficulty': 'лёгкая',
+        'difficulty': 'below_medium',
         'distance_km': 6,
         'elevation_gain_m': 200,
         'departure_time': '09:00',
@@ -32,6 +32,7 @@ void main() {
 
       expect(hike.id, 1);
       expect(hike.dateStart, DateTime(2025, 6, 11));
+      expect(hike.difficulty, HikeDifficulty.belowMedium);
       expect(hike.distanceKm, 6.0); // int in JSON, double in model
       expect(hike.spotsLeft, isNull);
       expect(hike.requirements, hasLength(2));
@@ -57,6 +58,49 @@ void main() {
       expect(hike.requirements, isEmpty);
       expect(hike.includes, isEmpty);
       expect(hike.images, isEmpty);
+    });
+
+    test('drops a difficulty the client does not know', () {
+      final Map<String, dynamic> json = <String, dynamic>{
+        'id': 3,
+        'title': 'Поход с новой градацией',
+        'date_start': '2025-07-01',
+        'source_url': 'https://t.me/x/2',
+        'organizer': <String, dynamic>{'id': 3, 'name': 'Клуб'},
+        // Legacy Russian wording, or a grade added to the scale after release:
+        // the badge is hidden rather than mislabelled.
+        'difficulty': 'выше средней',
+      };
+
+      final Hike hike = HikeDto.fromJson(json).toDomain();
+
+      expect(hike.difficulty, isNull);
+    });
+  });
+
+  group('HikeDifficulty.tryParse', () {
+    test('maps every API key and rejects anything else', () {
+      expect(HikeDifficulty.tryParse('easy'), HikeDifficulty.easy);
+      expect(
+        HikeDifficulty.tryParse('below_medium'),
+        HikeDifficulty.belowMedium,
+      );
+      expect(HikeDifficulty.tryParse('medium'), HikeDifficulty.medium);
+      expect(
+        HikeDifficulty.tryParse('above_medium'),
+        HikeDifficulty.aboveMedium,
+      );
+      expect(HikeDifficulty.tryParse('hard'), HikeDifficulty.hard);
+      expect(HikeDifficulty.tryParse('Easy'), isNull);
+      expect(HikeDifficulty.tryParse(''), isNull);
+      expect(HikeDifficulty.tryParse(null), isNull);
+    });
+
+    test('keeps the grades in ascending order', () {
+      expect(
+        HikeDifficulty.values.map((HikeDifficulty d) => d.apiValue),
+        <String>['easy', 'below_medium', 'medium', 'above_medium', 'hard'],
+      );
     });
   });
 

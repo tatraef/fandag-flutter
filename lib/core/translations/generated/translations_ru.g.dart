@@ -40,6 +40,7 @@ class TranslationsRu with BaseTranslations<AppLocale, Translations> implements T
 	@override late final _TranslationsCommonRu common = _TranslationsCommonRu._(_root);
 	@override late final _TranslationsNavigationRu navigation = _TranslationsNavigationRu._(_root);
 	@override late final _TranslationsFeedRu feed = _TranslationsFeedRu._(_root);
+	@override late final _TranslationsDifficultyRu difficulty = _TranslationsDifficultyRu._(_root);
 	@override late final _TranslationsFiltersRu filters = _TranslationsFiltersRu._(_root);
 	@override late final _TranslationsDetailRu detail = _TranslationsDetailRu._(_root);
 	@override late final _TranslationsOrganizerRu organizer = _TranslationsOrganizerRu._(_root);
@@ -79,6 +80,20 @@ class _TranslationsFeedRu implements TranslationsFeedEn {
 	// Translations
 	@override String get empty => 'Походов пока нет';
 	@override String get loadError => 'Не удалось загрузить. Потяните, чтобы повторить';
+}
+
+// Path: difficulty
+class _TranslationsDifficultyRu implements TranslationsDifficultyEn {
+	_TranslationsDifficultyRu._(this._root);
+
+	final TranslationsRu _root; // ignore: unused_field
+
+	// Translations
+	@override String get easy => 'Низкая';
+	@override String get belowMedium => 'Ниже средней';
+	@override String get medium => 'Средняя';
+	@override String get aboveMedium => 'Выше средней';
+	@override String get hard => 'Высокая';
 }
 
 // Path: filters
@@ -191,6 +206,11 @@ extension on TranslationsRu {
 			'navigation.favorites' => 'Избранное',
 			'feed.empty' => 'Походов пока нет',
 			'feed.loadError' => 'Не удалось загрузить. Потяните, чтобы повторить',
+			'difficulty.easy' => 'Низкая',
+			'difficulty.belowMedium' => 'Ниже средней',
+			'difficulty.medium' => 'Средняя',
+			'difficulty.aboveMedium' => 'Выше средней',
+			'difficulty.hard' => 'Высокая',
 			'filters.title' => 'Фильтры',
 			'filters.apply' => 'Применить',
 			'filters.reset' => 'Сбросить',

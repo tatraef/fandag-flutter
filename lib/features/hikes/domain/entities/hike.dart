@@ -1,3 +1,4 @@
+import 'package:fandag/features/hikes/domain/entities/hike_difficulty.dart';
 import 'package:fandag/features/hikes/domain/entities/organizer.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
@@ -16,7 +17,7 @@ abstract class Hike with _$Hike {
     @Default(<String>[]) List<String> images,
     DateTime? dateEnd,
     int? price,
-    String? difficulty,
+    HikeDifficulty? difficulty,
     double? distanceKm,
     int? elevationGainM,
     String? departureTime,

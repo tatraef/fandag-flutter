@@ -34,7 +34,7 @@ final class HikesFeedControllerProvider
 }
 
 String _$hikesFeedControllerHash() =>
-    r'a3fa8a5a79cb382e958d170f1f208c10cc6d0faa';
+    r'b8efbca89f58ce35190c2d8d98a27ab5bf0629fc';
 
 abstract class _$HikesFeedController extends $AsyncNotifier<HikesFeedState> {
   FutureOr<HikesFeedState> build();

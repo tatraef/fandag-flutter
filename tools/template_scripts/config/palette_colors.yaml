@@ -75,6 +75,12 @@ sections:
     info:
       hex: "FF2196F3"
       doc: "Info blue"
+    lime:
+      hex: "FF8BC34A"
+      doc: "Yellow-green lime"
+    orange:
+      hex: "FFFF9800"
+      doc: "Warning orange"
 
   Surface:
     surfaceLight:
@@ -89,3 +95,4 @@ sections:
     backgroundDark:
       hex: "FF1E1E1E"
       doc: "Dark background"
+
