@@ -155,10 +155,10 @@ When feature A needs something from feature B, it must import only from B's `dom
 
 ```dart
 // CORRECT -- importing auth domain from home feature
-import 'package:flutter_template_v3/features/auth/domain/domain.dart';
+import 'package:fandag/features/auth/domain/domain.dart';
 
 // WRONG -- importing auth data layer from another feature
-import 'package:flutter_template_v3/features/auth/data/data.dart';
+import 'package:fandag/features/auth/data/data.dart';
 ```
 
 ### 7. Translations are NOT in a barrel
@@ -166,7 +166,7 @@ import 'package:flutter_template_v3/features/auth/data/data.dart';
 The `core/translations/` directory contains JSON source files and auto-generated slang translations. These are **not** re-exported through any barrel. Import the generated file directly where needed:
 
 ```dart
-import 'package:flutter_template_v3/core/translations/generated/translations.g.dart';
+import 'package:fandag/core/translations/generated/translations.g.dart';
 ```
 
 This is because the generated translation code has its own import structure and should not be mixed into the `core.dart` aggregate.

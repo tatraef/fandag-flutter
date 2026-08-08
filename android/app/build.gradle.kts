@@ -18,7 +18,7 @@ val secretProperties = Properties().apply {
 }
 
 android {
-    namespace = "com.example.flutter_template_v3"
+    namespace = "ru.fandag.app"
     compileSdk = flutter.compileSdkVersion
     ndkVersion = flutter.ndkVersion
 
@@ -34,7 +34,7 @@ android {
     defaultConfig {
         applicationId = envProperties.getProperty("applicationId", "ru.fandag.app")
         manifestPlaceholders += mapOf(
-            "applicationLabel" to envProperties.getProperty("applicationLabel", "Flutter Template v3"),
+            "applicationLabel" to envProperties.getProperty("applicationLabel", "Fandag"),
         )
         minSdk = flutter.minSdkVersion
         targetSdk = flutter.targetSdkVersion

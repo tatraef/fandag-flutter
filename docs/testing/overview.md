@@ -1,6 +1,6 @@
-# Testing Overview — Flutter Template v3
+# Testing Overview — Fandag
 
-This document provides an overview of the testing strategy and infrastructure in Flutter Template v3.
+This document provides an overview of the testing strategy and infrastructure in Fandag.
 
 ## Testing Philosophy
 
@@ -209,7 +209,7 @@ when(() => mockRepository.getPosts()).thenAnswer((_) async => posts);
 import 'package:flutter_test/flutter_test.dart';
 
 // 2. Project packages
-import 'package:flutter_template_v3/features/home/domain/domain.dart';
+import 'package:fandag/features/home/domain/domain.dart';
 
 // 3. Test helpers (relative imports OK in tests)
 import '../../../helpers/helpers.dart';

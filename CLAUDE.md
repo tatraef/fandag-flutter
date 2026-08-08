@@ -1,6 +1,6 @@
-# CLAUDE.md — Flutter Template v3
+# CLAUDE.md — Fandag
 
-Flutter Template v3 — production-ready шаблон на **Riverpod-архитектуре** (feature-first, MVVM + Repository).
+Fandag — production-ready шаблон на **Riverpod-архитектуре** (feature-first, MVVM + Repository).
 
 All docs: `docs/README.md`. New feature checklist: `docs/reference/adding-feature.md`.
 Tech stack: `docs/fundamentals/tech-stack.md`. Project structure: `docs/fundamentals/project-structure.md`.
@@ -36,7 +36,7 @@ Tech stack: `docs/fundamentals/tech-stack.md`. Project structure: `docs/fundamen
 - **Full rules**: `docs/conventions/barrel-files.md`
 
 ### Imports
-- Always use `package:flutter_template_v3/...` (no relative imports)
+- Always use `package:fandag/...` (no relative imports)
 - Order: `dart:` → `package:` → project packages
 
 ### Dependencies

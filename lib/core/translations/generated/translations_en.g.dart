@@ -43,6 +43,7 @@ class Translations with BaseTranslations<AppLocale, Translations> {
 	late final TranslationsCommonEn common = TranslationsCommonEn._(_root);
 	late final TranslationsNavigationEn navigation = TranslationsNavigationEn._(_root);
 	late final TranslationsFeedEn feed = TranslationsFeedEn._(_root);
+	late final TranslationsDifficultyEn difficulty = TranslationsDifficultyEn._(_root);
 	late final TranslationsFiltersEn filters = TranslationsFiltersEn._(_root);
 	late final TranslationsDetailEn detail = TranslationsDetailEn._(_root);
 	late final TranslationsOrganizerEn organizer = TranslationsOrganizerEn._(_root);
@@ -95,6 +96,30 @@ class TranslationsFeedEn {
 
 	/// en: 'Failed to load. Pull down to retry'
 	String get loadError => 'Failed to load. Pull down to retry';
+}
+
+// Path: difficulty
+class TranslationsDifficultyEn {
+	TranslationsDifficultyEn._(this._root);
+
+	final Translations _root; // ignore: unused_field
+
+	// Translations
+
+	/// en: 'Low'
+	String get easy => 'Low';
+
+	/// en: 'Below average'
+	String get belowMedium => 'Below average';
+
+	/// en: 'Average'
+	String get medium => 'Average';
+
+	/// en: 'Above average'
+	String get aboveMedium => 'Above average';
+
+	/// en: 'High'
+	String get hard => 'High';
 }
 
 // Path: filters
@@ -281,6 +306,11 @@ extension on Translations {
 			'navigation.favorites' => 'Favorites',
 			'feed.empty' => 'No hikes yet',
 			'feed.loadError' => 'Failed to load. Pull down to retry',
+			'difficulty.easy' => 'Low',
+			'difficulty.belowMedium' => 'Below average',
+			'difficulty.medium' => 'Average',
+			'difficulty.aboveMedium' => 'Above average',
+			'difficulty.hard' => 'High',
 			'filters.title' => 'Filters',
 			'filters.apply' => 'Apply',
 			'filters.reset' => 'Reset',

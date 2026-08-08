@@ -1,4 +1,4 @@
-# Unit Testing — Flutter Template v3
+# Unit Testing — Fandag
 
 Unit tests verify individual functions, classes, and business logic in isolation. This is the foundation of our testing pyramid.
 
@@ -27,7 +27,7 @@ Domain entities are the simplest to test since they have no external dependencie
 **Example:**
 
 ```dart
-import 'package:flutter_template_v3/features/home/domain/entities/post.dart';
+import 'package:fandag/features/home/domain/entities/post.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {
@@ -107,8 +107,8 @@ Data layer tests verify DTOs, datasources, and repositories.
 **Example:**
 
 ```dart
-import 'package:flutter_template_v3/features/home/data/models/models.dart';
-import 'package:flutter_template_v3/features/home/domain/entities/entities.dart';
+import 'package:fandag/features/home/data/models/models.dart';
+import 'package:fandag/features/home/domain/entities/entities.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {
@@ -166,10 +166,10 @@ void main() {
 **Setup:**
 
 ```dart
-import 'package:flutter_template_v3/core/constants/constants.dart';
-import 'package:flutter_template_v3/core/network/network.dart';
-import 'package:flutter_template_v3/features/home/data/datasources/home_remote_datasource.dart';
-import 'package:flutter_template_v3/features/home/data/models/models.dart';
+import 'package:fandag/core/constants/constants.dart';
+import 'package:fandag/core/network/network.dart';
+import 'package:fandag/features/home/data/datasources/home_remote_datasource.dart';
+import 'package:fandag/features/home/data/models/models.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
 
@@ -233,11 +233,11 @@ test('should return list of PostDto when API call succeeds', () async {
 **Setup:**
 
 ```dart
-import 'package:flutter_template_v3/core/network/network.dart';
-import 'package:flutter_template_v3/features/home/data/datasources/home_remote_datasource.dart';
-import 'package:flutter_template_v3/features/home/data/models/models.dart';
-import 'package:flutter_template_v3/features/home/data/repositories/home_repository_impl.dart';
-import 'package:flutter_template_v3/features/home/domain/entities/entities.dart';
+import 'package:fandag/core/network/network.dart';
+import 'package:fandag/features/home/data/datasources/home_remote_datasource.dart';
+import 'package:fandag/features/home/data/models/models.dart';
+import 'package:fandag/features/home/data/repositories/home_repository_impl.dart';
+import 'package:fandag/features/home/domain/entities/entities.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
 

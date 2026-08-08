@@ -93,7 +93,7 @@ LazyDatabase _openConnection() {
 
 ```dart
 // lib/core/storage/database/app_database_provider.dart
-import 'package:flutter_template_v3/core/storage/database/app_database.dart';
+import 'package:fandag/core/storage/database/app_database.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 part 'app_database_provider.g.dart';

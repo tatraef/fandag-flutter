@@ -145,7 +145,7 @@ Used in provider wiring (e.g., `auth_providers.dart`):
 @Riverpod(keepAlive: true)
 AuthRepository authRepository(Ref ref) {
   if (AppConfig.useMock) {
-    return MockAuthRepository();
+    return AuthRepositoryMock();
   }
   // ... real implementation
 }

@@ -30,6 +30,8 @@ abstract class AppColors {
   static const Color success = Color(0xFF4CAF50);
   static const Color warning = Color(0xFFFFC107);
   static const Color info = Color(0xFF2196F3);
+  static const Color lime = Color(0xFF8BC34A);
+  static const Color orange = Color(0xFFFF9800);
 
   // Surface
   static const Color surfaceLight = Color(0xFFFFFFFF);

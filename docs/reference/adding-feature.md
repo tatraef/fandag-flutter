@@ -64,7 +64,7 @@ Create an abstract class in `domain/repositories/`.
 
 ```dart
 // domain/repositories/order_repository.dart
-import 'package:flutter_template_v3/features/order/domain/entities/entities.dart';
+import 'package:fandag/features/order/domain/entities/entities.dart';
 
 abstract class OrderRepository {
   Future<List<Order>> getOrders();
@@ -108,7 +108,7 @@ Create Freezed + json_serializable models in `data/models/`. Each DTO has a `toD
 ```dart
 // data/models/order_dto.dart
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:flutter_template_v3/features/order/domain/domain.dart';
+import 'package:fandag/features/order/domain/domain.dart';
 
 part 'order_dto.freezed.dart';
 part 'order_dto.g.dart';
@@ -136,9 +136,9 @@ abstract class OrderDto with _$OrderDto {
 
 ```dart
 // data/datasources/order_remote_datasource.dart
-import 'package:flutter_template_v3/core/constants/constants.dart';
-import 'package:flutter_template_v3/core/network/network.dart';
-import 'package:flutter_template_v3/features/order/data/models/models.dart';
+import 'package:fandag/core/constants/constants.dart';
+import 'package:fandag/core/network/network.dart';
+import 'package:fandag/features/order/data/models/models.dart';
 
 class OrderRemoteDataSource {
   OrderRemoteDataSource({required ApiClient apiClient}) : _apiClient = apiClient;
@@ -159,8 +159,8 @@ class OrderRemoteDataSource {
 
 ```dart
 // data/repositories/order_repository_impl.dart
-import 'package:flutter_template_v3/features/order/data/datasources/datasources.dart';
-import 'package:flutter_template_v3/features/order/domain/domain.dart';
+import 'package:fandag/features/order/data/datasources/datasources.dart';
+import 'package:fandag/features/order/domain/domain.dart';
 
 class OrderRepositoryImpl implements OrderRepository {
   OrderRepositoryImpl({required OrderRemoteDataSource remoteDataSource})
@@ -220,9 +220,9 @@ Create a `<feature>_providers.dart` file that wires data source -> repository.
 ```dart
 // presentation/controllers/order_providers.dart
 import 'package:riverpod_annotation/riverpod_annotation.dart';
-import 'package:flutter_template_v3/core/network/network.dart';
-import 'package:flutter_template_v3/features/order/data/data.dart';
-import 'package:flutter_template_v3/features/order/domain/domain.dart';
+import 'package:fandag/core/network/network.dart';
+import 'package:fandag/features/order/data/data.dart';
+import 'package:fandag/features/order/domain/domain.dart';
 
 part 'order_providers.g.dart';
 
@@ -246,8 +246,8 @@ OrderRepository orderRepository(Ref ref) {
 ```dart
 // presentation/controllers/order_list_controller.dart
 import 'package:riverpod_annotation/riverpod_annotation.dart';
-import 'package:flutter_template_v3/features/order/domain/domain.dart';
-import 'package:flutter_template_v3/features/order/presentation/controllers/controllers.dart';
+import 'package:fandag/features/order/domain/domain.dart';
+import 'package:fandag/features/order/presentation/controllers/controllers.dart';
 
 part 'order_list_controller.g.dart';
 
@@ -280,8 +280,8 @@ Use `ConsumerWidget` or `ConsumerStatefulWidget`. Never use widget functions.
 // presentation/pages/order_list_page.dart
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:flutter_template_v3/features/order/domain/domain.dart';
-import 'package:flutter_template_v3/features/order/presentation/controllers/controllers.dart';
+import 'package:fandag/features/order/domain/domain.dart';
+import 'package:fandag/features/order/presentation/controllers/controllers.dart';
 
 class OrderListPage extends ConsumerWidget {
   const OrderListPage({super.key});

@@ -1,4 +1,4 @@
-# Flutter Template v3 Theme Colors
+# Fandag Theme Colors
 # Semantic, theme-aware color definitions
 
 colors:
@@ -69,3 +69,24 @@ colors:
   warning:
     value: warning
     doc: "Warning color"
+
+  difficultyEasy:
+    value: success
+    doc: "Difficulty badge — easy grade"
+
+  difficultyBelowMedium:
+    value: lime
+    doc: "Difficulty badge — below-medium grade"
+
+  difficultyMedium:
+    value: warning
+    doc: "Difficulty badge — medium grade"
+
+  difficultyAboveMedium:
+    value: orange
+    doc: "Difficulty badge — above-medium grade"
+
+  difficultyHard:
+    light: error
+    dark: errorLight
+    doc: "Difficulty badge — hard grade"

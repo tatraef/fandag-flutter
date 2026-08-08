@@ -12,9 +12,9 @@ Remote datasources are **plain classes** with ApiClient injection. They return D
 
 ```dart
 import 'package:dio/dio.dart';
-import 'package:flutter_template_v3/core/constants/constants.dart';
-import 'package:flutter_template_v3/core/network/network.dart';
-import 'package:flutter_template_v3/features/<feature>/data/models/models.dart';
+import 'package:fandag/core/constants/constants.dart';
+import 'package:fandag/core/network/network.dart';
+import 'package:fandag/features/<feature>/data/models/models.dart';
 
 class FeatureRemoteDataSource {
   FeatureRemoteDataSource({required ApiClient apiClient}) : _apiClient = apiClient;
@@ -105,7 +105,7 @@ class FeatureRemoteDataSource {
 7. **No `!` (bang operator)** — use null-safe access:
    - Lists: `response.data ?? <dynamic>[]`
    - Single objects: null-check + `throw StateError('Response body is null')`
-8. **Import**: Always add `import 'package:flutter_template_v3/core/network/network.dart';` for `ApiClient`
+8. **Import**: Always add `import 'package:fandag/core/network/network.dart';` for `ApiClient`
 
 ## HTTP Method Patterns
 

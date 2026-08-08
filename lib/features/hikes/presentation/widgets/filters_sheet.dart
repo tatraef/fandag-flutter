@@ -1,9 +1,9 @@
-import 'package:fandag/core/extensions/extensions.dart';
 import 'package:fandag/core/theme/theme.dart';
 import 'package:fandag/core/translations/generated/translations.g.dart';
 import 'package:fandag/core/utils/date_formatting.dart';
 import 'package:fandag/features/hikes/domain/domain.dart';
 import 'package:fandag/features/hikes/presentation/controllers/controllers.dart';
+import 'package:fandag/features/hikes/presentation/extensions/extensions.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -66,13 +66,15 @@ class _FiltersSheetState extends ConsumerState<FiltersSheet> {
               const SizedBox(height: _gap),
               _DateRow(
                 draft: _draft,
-                onChanged: (HikeFilters value) => setState(() => _draft = value),
+                onChanged: (HikeFilters value) =>
+                    setState(() => _draft = value),
               ),
               const SizedBox(height: _gap),
               _DifficultySelector(
                 selected: _draft.difficulties,
-                onChanged: (Set<String> value) =>
-                    setState(() => _draft = _draft.copyWith(difficulties: value)),
+                onChanged: (Set<HikeDifficulty> value) => setState(
+                  () => _draft = _draft.copyWith(difficulties: value),
+                ),
               ),
               const SizedBox(height: _gap),
               _PriceSlider(
@@ -127,10 +129,7 @@ class _DateRow extends StatelessWidget {
   final HikeFilters draft;
   final ValueChanged<HikeFilters> onChanged;
 
-  Future<void> _pick(
-    BuildContext context, {
-    required bool isFrom,
-  }) async {
+  Future<void> _pick(BuildContext context, {required bool isFrom}) async {
     final DateTime now = DateTime.now();
     final DateTime? picked = await showDatePicker(
       context: context,
@@ -198,7 +197,10 @@ class _DateField extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: <Widget>[
             Text(value, style: context.primaryFonts.regular16),
-            Icon(Icons.calendar_today_outlined, color: context.colors.textTertiary),
+            Icon(
+              Icons.calendar_today_outlined,
+              color: context.colors.textTertiary,
+            ),
           ],
         ),
       ),
@@ -209,26 +211,29 @@ class _DateField extends StatelessWidget {
 class _DifficultySelector extends StatelessWidget {
   const _DifficultySelector({required this.selected, required this.onChanged});
 
-  final Set<String> selected;
-  final ValueChanged<Set<String>> onChanged;
+  final Set<HikeDifficulty> selected;
+  final ValueChanged<Set<HikeDifficulty>> onChanged;
 
   @override
   Widget build(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
-        Text(context.t.filters.difficulty, style: context.primaryFonts.semibold16),
+        Text(
+          context.t.filters.difficulty,
+          style: context.primaryFonts.semibold16,
+        ),
         const SizedBox(height: 8),
         Wrap(
           spacing: 8,
-          children: HikeDifficulty.values.map((String value) {
+          children: HikeDifficulty.values.map((HikeDifficulty value) {
             final bool isSelected = selected.contains(value);
 
             return FilterChip(
-              label: Text(value.capitalize()),
+              label: Text(value.label(context)),
               selected: isSelected,
               onSelected: (bool _) {
-                final Set<String> next = <String>{...selected};
+                final Set<HikeDifficulty> next = <HikeDifficulty>{...selected};
                 if (isSelected) {
                   next.remove(value);
                 } else {
@@ -260,7 +265,10 @@ class _PriceSlider extends StatelessWidget {
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: <Widget>[
-            Text(context.t.filters.priceMax, style: context.primaryFonts.semibold16),
+            Text(
+              context.t.filters.priceMax,
+              style: context.primaryFonts.semibold16,
+            ),
             Text(
               value == null
                   ? context.t.filters.priceAny
@@ -300,14 +308,10 @@ class _RegionDropdown extends StatelessWidget {
           isExpanded: true,
           isDense: true,
           items: <DropdownMenuItem<String?>>[
-            DropdownMenuItem<String?>(
-              child: Text(context.t.filters.anyValue),
-            ),
+            DropdownMenuItem<String?>(child: Text(context.t.filters.anyValue)),
             ...FiltersSheet.regions.map(
-              (String region) => DropdownMenuItem<String?>(
-                value: region,
-                child: Text(region),
-              ),
+              (String region) =>
+                  DropdownMenuItem<String?>(value: region, child: Text(region)),
             ),
           ],
           onChanged: onChanged,
@@ -330,11 +334,11 @@ class _OrganizerDropdown extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final List<Organizer> list =
-        organizers.value ?? const <Organizer>[];
+    final List<Organizer> list = organizers.value ?? const <Organizer>[];
     // Guard the dropdown invariant: the value must match exactly one item.
-    final int? effectiveValue =
-        list.any((Organizer o) => o.id == value) ? value : null;
+    final int? effectiveValue = list.any((Organizer o) => o.id == value)
+        ? value
+        : null;
 
     return InputDecorator(
       decoration: InputDecoration(labelText: context.t.filters.organizer),
@@ -344,9 +348,7 @@ class _OrganizerDropdown extends StatelessWidget {
           isExpanded: true,
           isDense: true,
           items: <DropdownMenuItem<int?>>[
-            DropdownMenuItem<int?>(
-              child: Text(context.t.filters.anyValue),
-            ),
+            DropdownMenuItem<int?>(child: Text(context.t.filters.anyValue)),
             ...list.map(
               (Organizer organizer) => DropdownMenuItem<int?>(
                 value: organizer.id,

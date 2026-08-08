@@ -1,4 +1,4 @@
-package com.example.flutter_template_v3
+package ru.fandag.app
 
 import io.flutter.embedding.android.FlutterActivity
 

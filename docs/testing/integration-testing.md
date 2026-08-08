@@ -1,4 +1,4 @@
-# Integration Testing — Flutter Template v3
+# Integration Testing — Fandag
 
 Integration tests (also called E2E tests) verify complete user flows in a running app on a real device or simulator.
 
@@ -38,7 +38,7 @@ integration_test/
 ```dart
 import 'package:flutter_test/flutter_test.dart';
 import 'package:integration_test/integration_test.dart';
-import 'package:flutter_template_v3/main.dart' as app;
+import 'package:fandag/main.dart' as app;
 
 void main() {
   IntegrationTestWidgetsFlutterBinding.ensureInitialized();

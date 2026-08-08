@@ -14,7 +14,7 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$HikeFilters {
 
- DateTime? get dateFrom; DateTime? get dateTo; Set<String> get difficulties; int? get priceMax; String? get region; int? get organizerId;
+ DateTime? get dateFrom; DateTime? get dateTo; Set<HikeDifficulty> get difficulties; int? get priceMax; String? get region; int? get organizerId;
 /// Create a copy of HikeFilters
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -45,7 +45,7 @@ abstract mixin class $HikeFiltersCopyWith<$Res>  {
   factory $HikeFiltersCopyWith(HikeFilters value, $Res Function(HikeFilters) _then) = _$HikeFiltersCopyWithImpl;
 @useResult
 $Res call({
- DateTime? dateFrom, DateTime? dateTo, Set<String> difficulties, int? priceMax, String? region, int? organizerId
+ DateTime? dateFrom, DateTime? dateTo, Set<HikeDifficulty> difficulties, int? priceMax, String? region, int? organizerId
 });
 
 
@@ -67,7 +67,7 @@ class _$HikeFiltersCopyWithImpl<$Res>
 dateFrom: freezed == dateFrom ? _self.dateFrom : dateFrom // ignore: cast_nullable_to_non_nullable
 as DateTime?,dateTo: freezed == dateTo ? _self.dateTo : dateTo // ignore: cast_nullable_to_non_nullable
 as DateTime?,difficulties: null == difficulties ? _self.difficulties : difficulties // ignore: cast_nullable_to_non_nullable
-as Set<String>,priceMax: freezed == priceMax ? _self.priceMax : priceMax // ignore: cast_nullable_to_non_nullable
+as Set<HikeDifficulty>,priceMax: freezed == priceMax ? _self.priceMax : priceMax // ignore: cast_nullable_to_non_nullable
 as int?,region: freezed == region ? _self.region : region // ignore: cast_nullable_to_non_nullable
 as String?,organizerId: freezed == organizerId ? _self.organizerId : organizerId // ignore: cast_nullable_to_non_nullable
 as int?,
@@ -155,7 +155,7 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( DateTime? dateFrom,  DateTime? dateTo,  Set<String> difficulties,  int? priceMax,  String? region,  int? organizerId)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( DateTime? dateFrom,  DateTime? dateTo,  Set<HikeDifficulty> difficulties,  int? priceMax,  String? region,  int? organizerId)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _HikeFilters() when $default != null:
 return $default(_that.dateFrom,_that.dateTo,_that.difficulties,_that.priceMax,_that.region,_that.organizerId);case _:
@@ -176,7 +176,7 @@ return $default(_that.dateFrom,_that.dateTo,_that.difficulties,_that.priceMax,_t
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( DateTime? dateFrom,  DateTime? dateTo,  Set<String> difficulties,  int? priceMax,  String? region,  int? organizerId)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( DateTime? dateFrom,  DateTime? dateTo,  Set<HikeDifficulty> difficulties,  int? priceMax,  String? region,  int? organizerId)  $default,) {final _that = this;
 switch (_that) {
 case _HikeFilters():
 return $default(_that.dateFrom,_that.dateTo,_that.difficulties,_that.priceMax,_that.region,_that.organizerId);case _:
@@ -196,7 +196,7 @@ return $default(_that.dateFrom,_that.dateTo,_that.difficulties,_that.priceMax,_t
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( DateTime? dateFrom,  DateTime? dateTo,  Set<String> difficulties,  int? priceMax,  String? region,  int? organizerId)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( DateTime? dateFrom,  DateTime? dateTo,  Set<HikeDifficulty> difficulties,  int? priceMax,  String? region,  int? organizerId)?  $default,) {final _that = this;
 switch (_that) {
 case _HikeFilters() when $default != null:
 return $default(_that.dateFrom,_that.dateTo,_that.difficulties,_that.priceMax,_that.region,_that.organizerId);case _:
@@ -211,13 +211,13 @@ return $default(_that.dateFrom,_that.dateTo,_that.difficulties,_that.priceMax,_t
 
 
 class _HikeFilters extends HikeFilters {
-  const _HikeFilters({this.dateFrom, this.dateTo, final  Set<String> difficulties = const <String>{}, this.priceMax, this.region, this.organizerId}): _difficulties = difficulties,super._();
+  const _HikeFilters({this.dateFrom, this.dateTo, final  Set<HikeDifficulty> difficulties = const <HikeDifficulty>{}, this.priceMax, this.region, this.organizerId}): _difficulties = difficulties,super._();
   
 
 @override final  DateTime? dateFrom;
 @override final  DateTime? dateTo;
- final  Set<String> _difficulties;
-@override@JsonKey() Set<String> get difficulties {
+ final  Set<HikeDifficulty> _difficulties;
+@override@JsonKey() Set<HikeDifficulty> get difficulties {
   if (_difficulties is EqualUnmodifiableSetView) return _difficulties;
   // ignore: implicit_dynamic_type
   return EqualUnmodifiableSetView(_difficulties);
@@ -257,7 +257,7 @@ abstract mixin class _$HikeFiltersCopyWith<$Res> implements $HikeFiltersCopyWith
   factory _$HikeFiltersCopyWith(_HikeFilters value, $Res Function(_HikeFilters) _then) = __$HikeFiltersCopyWithImpl;
 @override @useResult
 $Res call({
- DateTime? dateFrom, DateTime? dateTo, Set<String> difficulties, int? priceMax, String? region, int? organizerId
+ DateTime? dateFrom, DateTime? dateTo, Set<HikeDifficulty> difficulties, int? priceMax, String? region, int? organizerId
 });
 
 
@@ -279,7 +279,7 @@ class __$HikeFiltersCopyWithImpl<$Res>
 dateFrom: freezed == dateFrom ? _self.dateFrom : dateFrom // ignore: cast_nullable_to_non_nullable
 as DateTime?,dateTo: freezed == dateTo ? _self.dateTo : dateTo // ignore: cast_nullable_to_non_nullable
 as DateTime?,difficulties: null == difficulties ? _self._difficulties : difficulties // ignore: cast_nullable_to_non_nullable
-as Set<String>,priceMax: freezed == priceMax ? _self.priceMax : priceMax // ignore: cast_nullable_to_non_nullable
+as Set<HikeDifficulty>,priceMax: freezed == priceMax ? _self.priceMax : priceMax // ignore: cast_nullable_to_non_nullable
 as int?,region: freezed == region ? _self.region : region // ignore: cast_nullable_to_non_nullable
 as String?,organizerId: freezed == organizerId ? _self.organizerId : organizerId // ignore: cast_nullable_to_non_nullable
 as int?,

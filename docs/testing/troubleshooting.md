@@ -1,4 +1,4 @@
-# Testing Troubleshooting — Flutter Template v3
+# Testing Troubleshooting — Fandag
 
 This guide covers common testing issues and their solutions.
 
@@ -74,11 +74,11 @@ Use `lightTheme()` or `darkTheme()` functions:
 
 ```dart
 // ❌ Wrong
-import 'package:flutter_template_v3/core/theme/theme.dart';
+import 'package:fandag/core/theme/theme.dart';
 theme: AppTheme.lightTheme,
 
 // ✅ Correct
-import 'package:flutter_template_v3/core/theme/theme.dart';
+import 'package:fandag/core/theme/theme.dart';
 theme: lightTheme(),  // or darkTheme()
 ```
 
@@ -101,8 +101,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:mocktail/mocktail.dart';
 
-import 'package:flutter_template_v3/core/network/network.dart';
-import 'package:flutter_template_v3/features/home/domain/domain.dart';
+import 'package:fandag/core/network/network.dart';
+import 'package:fandag/features/home/domain/domain.dart';
 
 import '../../../helpers/helpers.dart';
 ```

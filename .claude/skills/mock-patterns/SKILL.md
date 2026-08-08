@@ -21,9 +21,9 @@ A mock repository implements the domain interface directly, returning hardcoded 
 ```dart
 import 'dart:async';
 
-import 'package:flutter_template_v3/features/<feature>/domain/domain.dart';
+import 'package:fandag/features/<feature>/domain/domain.dart';
 
-class MockFeatureRepository implements FeatureRepository {
+class FeatureRepositoryMock implements FeatureRepository {
   static const Duration _simulatedDelay = Duration(milliseconds: 500);
 
   @override
@@ -49,17 +49,24 @@ class MockFeatureRepository implements FeatureRepository {
 1. **Implements domain interface** -- `implements FeatureRepository`, not `extends`
 2. **Simulated delay** -- `Future.delayed(Duration(milliseconds: 500))` for realistic UX
 3. **Hardcoded response data** -- realistic but static values
-4. **Lives in data layer** -- `lib/features/<feature>/data/repositories/mock_<feature>_repository.dart`
+4. **Lives in data layer** -- `lib/features/<feature>/data/repositories/<feature>_repository_mock.dart`
 5. **Added to sub-barrel** -- export from `repositories/repositories.dart`
+6. **Named with a `Mock` suffix** -- `FeatureRepositoryMock`, never `MockFeatureRepository`
+
+### Naming: suffix, not prefix
+
+Every implementation of a domain interface is named `<Interface><Kind>` -- `FeatureRepositoryImpl`, `FeatureRepositoryMock`. The suffix keeps the interface and all of its implementations adjacent in file listings and autocomplete, and reads consistently across the pair.
+
+The `Mock<X>` prefix is reserved for **test doubles** -- `mockito`/`mocktail` classes such as `class MockFeatureRepository extends Mock implements FeatureRepository {}` in `test/`. Prefix in tests, suffix in `lib/`: the name alone tells you whether an object is a demo-mode implementation or a test stub.
 
 ---
 
-## Real Example: MockAuthRepository
+## Real Example: AuthRepositoryMock
 
-From `lib/features/auth/data/repositories/mock_auth_repository.dart`:
+From `lib/features/auth/data/repositories/auth_repository_mock.dart`:
 
 ```dart
-class MockAuthRepository implements AuthRepository {
+class AuthRepositoryMock implements AuthRepository {
   static const Duration _simulatedDelay = Duration(milliseconds: 500);
 
   final StreamController<bool> _authStateController =
@@ -111,7 +118,7 @@ The `AppConfig.useMock` flag switches between real and mock implementations in t
 @Riverpod(keepAlive: true)
 FeatureRepository featureRepository(Ref ref) {
   if (AppConfig.useMock) {
-    return MockFeatureRepository();
+    return FeatureRepositoryMock();
   }
 
   final FeatureRemoteDataSource dataSource = ref.watch(
@@ -138,7 +145,7 @@ features/<feature>/
     repositories/
       repositories.dart              # Sub-barrel (add mock export)
       <feature>_repository_impl.dart # Real implementation
-      mock_<feature>_repository.dart # Mock implementation
+      <feature>_repository_mock.dart # Mock implementation
 ```
 
 ---
@@ -151,7 +158,7 @@ features/<feature>/
 // WRONG -- mock should only be reached via AppConfig.useMock
 @Riverpod(keepAlive: true)
 FeatureRepository featureRepository(Ref ref) {
-  return MockFeatureRepository(); // Always returns mock!
+  return FeatureRepositoryMock(); // Always returns mock!
 }
 ```
 
@@ -187,14 +194,14 @@ Future<User> getUser() async {
 }
 
 // CORRECT -- return hardcoded success data
-// (For error testing, create a separate MockErrorFeatureRepository)
+// (For error testing, create a separate FeatureRepositoryErrorMock)
 ```
 
 ---
 
 ## References
 
-- `lib/features/auth/data/repositories/mock_auth_repository.dart` -- Canonical mock example
+- `lib/features/auth/data/repositories/auth_repository_mock.dart` -- Canonical mock example
 - `lib/core/environment/app_config.dart` -- `AppConfig.useMock` flag
 - `lib/features/auth/presentation/controllers/auth_providers.dart` -- Mock switching in provider
 - `docs/app-setup.md` -- Environment configuration

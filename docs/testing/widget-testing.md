@@ -1,4 +1,4 @@
-# Widget Testing — Flutter Template v3
+# Widget Testing — Fandag
 
 Widget tests verify UI components and user interactions. They test the widget tree and user interactions without running the full app.
 
@@ -43,8 +43,8 @@ Pure widgets are stateless/stateful widgets that don't use Riverpod.
 
 ```dart
 import 'package:flutter/material.dart';
-import 'package:flutter_template_v3/features/home/domain/entities/entities.dart';
-import 'package:flutter_template_v3/features/home/presentation/widgets/post_card.dart';
+import 'package:fandag/features/home/domain/entities/entities.dart';
+import 'package:fandag/features/home/presentation/widgets/post_card.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 import '../../../../helpers/helpers.dart';
@@ -123,9 +123,9 @@ Widgets that use Riverpod need `ProviderScope` and provider overrides.
 ```dart
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:flutter_template_v3/features/home/domain/entities/entities.dart';
-import 'package:flutter_template_v3/features/home/presentation/controllers/home_controller.dart';
-import 'package:flutter_template_v3/features/home/presentation/pages/home_page.dart';
+import 'package:fandag/features/home/domain/entities/entities.dart';
+import 'package:fandag/features/home/presentation/controllers/home_controller.dart';
+import 'package:fandag/features/home/presentation/pages/home_page.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 import '../../../../helpers/helpers.dart';

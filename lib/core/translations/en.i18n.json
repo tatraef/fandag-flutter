@@ -18,6 +18,13 @@
     "empty": "No hikes yet",
     "loadError": "Failed to load. Pull down to retry"
   },
+  "difficulty": {
+    "easy": "Low",
+    "belowMedium": "Below average",
+    "medium": "Average",
+    "aboveMedium": "Above average",
+    "hard": "High"
+  },
   "filters": {
     "title": "Filters",
     "apply": "Apply",

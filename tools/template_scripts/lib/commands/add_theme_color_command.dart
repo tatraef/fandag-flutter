@@ -108,7 +108,7 @@ class AddThemeColorCommand extends ScriptCommand<void> {
 
     // Build new YAML content
     final buffer = StringBuffer();
-    buffer.writeln('# Flutter Template v3 Theme Colors');
+    buffer.writeln('# Fandag Theme Colors');
     buffer.writeln('# Semantic, theme-aware color definitions');
     buffer.writeln();
     buffer.writeln('colors:');

@@ -65,7 +65,7 @@ Freezed + json_serializable data classes with `toDomain()` mapping.
 
 ```dart
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:flutter_template_v3/features/<feature>/domain/domain.dart';
+import 'package:fandag/features/<feature>/domain/domain.dart';
 
 part '<entity>_dto.freezed.dart';
 part '<entity>_dto.g.dart';
@@ -103,9 +103,9 @@ Plain class with ApiClient injection. Methods return DTOs. **ApiClient automatic
 
 ```dart
 import 'package:dio/dio.dart';
-import 'package:flutter_template_v3/core/constants/constants.dart';
-import 'package:flutter_template_v3/core/network/network.dart';
-import 'package:flutter_template_v3/features/<feature>/data/models/models.dart';
+import 'package:fandag/core/constants/constants.dart';
+import 'package:fandag/core/network/network.dart';
+import 'package:fandag/features/<feature>/data/models/models.dart';
 
 class FeatureRemoteDataSource {
   FeatureRemoteDataSource({required ApiClient apiClient}) : _apiClient = apiClient;
@@ -136,7 +136,7 @@ class FeatureRemoteDataSource {
 
 Rules:
 - **CRITICAL**: Constructor: `{required ApiClient apiClient}` stored as `_apiClient` (NOT Dio!)
-- Always import: `import 'package:flutter_template_v3/core/network/network.dart';`
+- Always import: `import 'package:fandag/core/network/network.dart';`
 - Return DTOs (NEVER domain entities)
 - Use explicit generic types on ApiClient calls: `get<List<dynamic>>`, `post<Map<String, dynamic>>`
 - **NO error handling** — ApiClient automatically converts errors to ApiException
@@ -148,8 +148,8 @@ Rules:
 Implements the domain repository interface. **NO error handling needed** — datasource (via ApiClient) already converts errors to ApiException.
 
 ```dart
-import 'package:flutter_template_v3/features/<feature>/data/datasources/datasources.dart';
-import 'package:flutter_template_v3/features/<feature>/domain/domain.dart';
+import 'package:fandag/features/<feature>/data/datasources/datasources.dart';
+import 'package:fandag/features/<feature>/domain/domain.dart';
 
 class FeatureRepositoryImpl implements FeatureRepository {
   FeatureRepositoryImpl({required FeatureRemoteDataSource remoteDataSource})
@@ -231,9 +231,9 @@ Tests are recommended but do not block completion.
 
 ## Imports
 
-- Always use `package:flutter_template_v3/...` (no relative imports)
+- Always use `package:fandag/...` (no relative imports)
 - Order: `dart:` → `package:` → project packages
-- Import domain via barrel: `package:flutter_template_v3/features/<feature>/domain/domain.dart`
+- Import domain via barrel: `package:fandag/features/<feature>/domain/domain.dart`
 
 ## Code Style
 
@@ -263,6 +263,6 @@ Fix any warnings or errors before completing.
 - [ ] API endpoints added to `ApiEndpoints` if needed
 - [ ] Sub-barrels: `models/models.dart`, `datasources/datasources.dart`, `repositories/repositories.dart`
 - [ ] Layer barrel: `data/data.dart` exports only sub-barrels
-- [ ] All files use `package:flutter_template_v3/...` imports
+- [ ] All files use `package:fandag/...` imports
 - [ ] `make gen` executed (auto on stop)
 - [ ] `make analyze` passes with no warnings

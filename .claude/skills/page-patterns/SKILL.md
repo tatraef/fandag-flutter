@@ -23,9 +23,9 @@ Does the page need TextEditingController, AnimationController, or initState/disp
 ```dart
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:flutter_template_v3/core/core.dart';
-import 'package:flutter_template_v3/features/<feature>/domain/domain.dart';
-import 'package:flutter_template_v3/features/<feature>/presentation/controllers/controllers.dart';
+import 'package:fandag/core/core.dart';
+import 'package:fandag/features/<feature>/domain/domain.dart';
+import 'package:fandag/features/<feature>/presentation/controllers/controllers.dart';
 
 class FeaturePage extends ConsumerWidget {
   const FeaturePage({super.key});
@@ -389,13 +389,13 @@ context.t.feature.title          // Translations (requires translations import)
 
 Required imports for these:
 ```dart
-import 'package:flutter_template_v3/core/extensions/extensions.dart'; // colors, primaryFonts, theme
-import 'package:flutter_template_v3/core/translations/generated/translations.g.dart'; // context.t
+import 'package:fandag/core/extensions/extensions.dart'; // colors, primaryFonts, theme
+import 'package:fandag/core/translations/generated/translations.g.dart'; // context.t
 ```
 
 For navigation with GoRouter:
 ```dart
-import 'package:flutter_template_v3/core/router/router.dart'; // AppRoute
+import 'package:fandag/core/router/router.dart'; // AppRoute
 import 'package:go_router/go_router.dart'; // context.go()
 ```
 

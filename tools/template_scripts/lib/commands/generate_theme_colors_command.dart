@@ -24,8 +24,13 @@ class GenerateThemeColorsCommand extends ScriptCommand<void> {
       'config',
       'theme_colors.yaml',
     );
-    final outputPath =
-        path.join(projectRoot, 'lib', 'core', 'theme', 'theme_colors.dart');
+    final outputPath = path.join(
+      projectRoot,
+      'lib',
+      'core',
+      'theme',
+      'theme_colors.dart',
+    );
 
     // Read YAML
     final configFile = File(configPath);
@@ -46,18 +51,18 @@ class GenerateThemeColorsCommand extends ScriptCommand<void> {
       final doc = data['doc'] as String;
 
       if (data.containsKey('light') && data.containsKey('dark')) {
-        colorEntries.add(_ColorEntry(
-          name: name,
-          doc: doc,
-          light: data['light'] as String,
-          dark: data['dark'] as String,
-        ));
+        colorEntries.add(
+          _ColorEntry(
+            name: name,
+            doc: doc,
+            light: data['light'] as String,
+            dark: data['dark'] as String,
+          ),
+        );
       } else if (data.containsKey('value')) {
-        colorEntries.add(_ColorEntry(
-          name: name,
-          doc: doc,
-          value: data['value'] as String,
-        ));
+        colorEntries.add(
+          _ColorEntry(name: name, doc: doc, value: data['value'] as String),
+        );
       }
     }
 
@@ -85,14 +90,12 @@ class GenerateThemeColorsCommand extends ScriptCommand<void> {
   }
 
   void _writeHeader(StringBuffer buffer) {
+    // Alphabetical: `directives_ordering` is an analyzer error for this project,
+    // and the generated file is committed.
+    buffer.writeln("import 'package:fandag/core/theme/app_colors.dart';");
     buffer.writeln("import 'package:flutter/material.dart';");
-    buffer.writeln(
-      "import 'package:flutter_template_v3/core/theme/app_colors.dart';",
-    );
     buffer.writeln();
-    buffer.writeln(
-      'class ThemeColors extends ThemeExtension<ThemeColors> {',
-    );
+    buffer.writeln('class ThemeColors extends ThemeExtension<ThemeColors> {');
   }
 
   void _writeConstructor(StringBuffer buffer, List<_ColorEntry> colors) {
@@ -166,12 +169,10 @@ class GenerateThemeColorsCommand extends ScriptCommand<void> {
 
     for (int i = 0; i < colors.length; i++) {
       final color = colors[i];
-      final lerpExpr =
-          'Color.lerp(${color.name}, other.${color.name}, t)!';
+      final lerpExpr = 'Color.lerp(${color.name}, other.${color.name}, t)!';
 
       // Check if the line would be too long (80+ chars)
-      final inlineLine =
-          '      ${color.name}: $lerpExpr,';
+      final inlineLine = '      ${color.name}: $lerpExpr,';
       if (inlineLine.length <= 80) {
         buffer.writeln(inlineLine);
       } else {

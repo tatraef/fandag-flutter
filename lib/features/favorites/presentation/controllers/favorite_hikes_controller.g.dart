@@ -58,4 +58,4 @@ final class FavoriteHikesProvider
   }
 }
 
-String _$favoriteHikesHash() => r'c7794cc5c25e3b40e8d850392d6b54e23b937dbf';
+String _$favoriteHikesHash() => r'afdcb684bc1201e9e7f4f142055318d11c445556';

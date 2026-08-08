@@ -72,7 +72,7 @@ class HikeRemoteDataSource {
       // delegate to the server. Multi-select is narrowed client-side in the
       // repository.
       if (filters.difficulties.length == 1)
-        'difficulty': filters.difficulties.first,
+        'difficulty': filters.difficulties.first.apiValue,
       if (filters.priceMax != null) 'price_max': filters.priceMax,
       if (filters.region != null) 'region': filters.region,
       if (filters.organizerId != null) 'organizer_id': filters.organizerId,

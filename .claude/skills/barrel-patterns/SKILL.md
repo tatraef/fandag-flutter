@@ -42,7 +42,7 @@ lib/features/<feature>/
 │   └── repositories/
 │       ├── repositories.dart       # Sub-barrel
 │       ├── auth_repository_impl.dart
-│       └── mock_auth_repository.dart
+│       └── auth_repository_mock.dart
 └── presentation/
     ├── presentation.dart           # Layer barrel
     ├── controllers/
@@ -205,13 +205,13 @@ Import other features only via their **domain barrel**:
 
 ```dart
 // CORRECT — import via domain barrel
-import 'package:flutter_template_v3/features/auth/domain/domain.dart';
+import 'package:fandag/features/auth/domain/domain.dart';
 
 // WRONG — importing individual files from another feature
-import 'package:flutter_template_v3/features/auth/domain/entities/user.dart';
+import 'package:fandag/features/auth/domain/entities/user.dart';
 
 // WRONG — importing data layer from another feature
-import 'package:flutter_template_v3/features/auth/data/data.dart';
+import 'package:fandag/features/auth/data/data.dart';
 ```
 
 ## Anti-Patterns
@@ -224,12 +224,12 @@ export 'repositories/auth_repository.dart';  // WRONG — should be repositories
 
 // BAD: relative imports
 import '../entities/user.dart';  // WRONG
-// CORRECT: import 'package:flutter_template_v3/features/auth/domain/domain.dart';
+// CORRECT: import 'package:fandag/features/auth/domain/domain.dart';
 
 // BAD: missing sub-barrel — new file not exported
 // Created user.dart but forgot to add to entities/entities.dart
 
 // BAD: exporting data/presentation from cross-feature import
-import 'package:flutter_template_v3/features/auth/data/data.dart';
+import 'package:fandag/features/auth/data/data.dart';
 // WRONG — cross-feature imports only via domain barrel
 ```

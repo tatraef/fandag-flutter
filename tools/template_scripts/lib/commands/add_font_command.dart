@@ -98,7 +98,7 @@ class AddFontCommand extends ScriptCommand<void> {
 
     // Build new YAML content
     final buffer = StringBuffer();
-    buffer.writeln('# Flutter Template v3 Typography');
+    buffer.writeln('# Fandag Typography');
     buffer.writeln('# Font styles for PrimaryThemeFonts');
     buffer.writeln();
     buffer.writeln('styles:');

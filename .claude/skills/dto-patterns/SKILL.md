@@ -11,7 +11,7 @@ DTOs (Data Transfer Objects) live in the **data layer** and handle JSON serializ
 ## Canonical Template — Response DTO
 
 ```dart
-import 'package:flutter_template_v3/features/<feature>/domain/domain.dart';
+import 'package:fandag/features/<feature>/domain/domain.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part '<entity>_dto.freezed.dart';
@@ -51,7 +51,7 @@ abstract class EntityDto with _$EntityDto {
 
 ```dart
 // lib/features/auth/data/models/user_dto.dart
-import 'package:flutter_template_v3/features/auth/domain/domain.dart';
+import 'package:fandag/features/auth/domain/domain.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'user_dto.freezed.dart';
@@ -81,7 +81,7 @@ abstract class UserDto with _$UserDto {
 
 ```dart
 // lib/features/home/data/models/post_dto.dart
-import 'package:flutter_template_v3/features/home/domain/domain.dart';
+import 'package:fandag/features/home/domain/domain.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'post_dto.freezed.dart';

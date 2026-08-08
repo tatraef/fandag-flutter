@@ -30,7 +30,7 @@ Quick-lookup table mapping every architectural concept to its canonical file in 
 | Datasource (POST with body) | `lib/features/auth/data/datasources/auth_remote_datasource.dart` | `_apiClient.post<Map<String, dynamic>>(endpoint, data: request.toJson())` |
 | Repository impl (simple) | `lib/features/home/data/repositories/home_repository_impl.dart` | Single datasource, DTO → domain mapping, no error mapping |
 | Repository impl (complex) | `lib/features/auth/data/repositories/auth_repository_impl.dart` | Datasource + SecureStorage, token management, StreamController |
-| Mock repository | `lib/features/auth/data/repositories/mock_auth_repository.dart` | `MockAuthRepository` — simulated delays, hardcoded responses |
+| Mock repository | `lib/features/auth/data/repositories/auth_repository_mock.dart` | `AuthRepositoryMock` — simulated delays, hardcoded responses |
 | Sub-barrel (models) | `lib/features/auth/data/models/models.dart` | Exports all DTOs and request models |
 | Sub-barrel (datasources) | `lib/features/auth/data/datasources/datasources.dart` | Exports datasource class |
 | Sub-barrel (repositories) | `lib/features/auth/data/repositories/repositories.dart` | Exports impl and mock |

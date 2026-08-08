@@ -1,3 +1,4 @@
+import 'package:fandag/features/hikes/domain/entities/hike_difficulty.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'hike_filters.freezed.dart';
@@ -8,7 +9,7 @@ abstract class HikeFilters with _$HikeFilters {
   const factory HikeFilters({
     DateTime? dateFrom,
     DateTime? dateTo,
-    @Default(<String>{}) Set<String> difficulties,
+    @Default(<HikeDifficulty>{}) Set<HikeDifficulty> difficulties,
     int? priceMax,
     String? region,
     int? organizerId,

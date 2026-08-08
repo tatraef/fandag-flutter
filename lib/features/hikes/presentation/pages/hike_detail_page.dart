@@ -178,7 +178,9 @@ class _Dots extends StatelessWidget {
           margin: const EdgeInsets.symmetric(horizontal: 3),
           decoration: BoxDecoration(
             shape: BoxShape.circle,
-            color: isActive ? context.colors.accent : context.colors.textInverse,
+            color: isActive
+                ? context.colors.accent
+                : context.colors.textInverse,
           ),
         );
       }),
@@ -231,12 +233,6 @@ class _ParametersSection extends StatelessWidget {
           value: '${hike.spotsLeft}',
           highlight: true,
         ),
-      if (hike.region != null)
-        _ParamRow(
-          icon: Icons.map_outlined,
-          label: context.t.detail.region,
-          value: hike.region!,
-        ),
     ];
 
     if (rows.isEmpty) {
@@ -246,7 +242,10 @@ class _ParametersSection extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
-        Text(context.t.detail.parameters, style: context.primaryFonts.semibold18),
+        Text(
+          context.t.detail.parameters,
+          style: context.primaryFonts.semibold18,
+        ),
         const SizedBox(height: 12),
         ...rows,
       ],
@@ -272,12 +271,14 @@ class _ParamRow extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final Color valueColor =
-        highlight ? context.colors.warning : context.colors.textPrimary;
+    final Color valueColor = highlight
+        ? context.colors.warning
+        : context.colors.textPrimary;
 
     return Padding(
       padding: const EdgeInsets.only(bottom: 10),
       child: Row(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
           Icon(icon, size: 20, color: context.colors.textTertiary),
           const SizedBox(width: 12),
@@ -287,15 +288,16 @@ class _ParamRow extends StatelessWidget {
               color: context.colors.textSecondary,
             ),
           ),
-          const Spacer(),
-          Flexible(
+          const SizedBox(width: 16),
+          Expanded(
             child: Text(
               value,
               textAlign: TextAlign.end,
-              style: (highlight
-                      ? context.primaryFonts.semibold16
-                      : context.primaryFonts.medium14)
-                  .copyWith(color: valueColor),
+              style:
+                  (highlight
+                          ? context.primaryFonts.semibold16
+                          : context.primaryFonts.medium14)
+                      .copyWith(color: valueColor),
             ),
           ),
         ],
@@ -349,7 +351,10 @@ class _OrganizerSection extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
-        Text(context.t.detail.organizer, style: context.primaryFonts.semibold18),
+        Text(
+          context.t.detail.organizer,
+          style: context.primaryFonts.semibold18,
+        ),
         const SizedBox(height: 8),
         Card(
           margin: EdgeInsets.zero,
@@ -363,9 +368,7 @@ class _OrganizerSection extends StatelessWidget {
         if (hike.contactName != null || phone != null) ...<Widget>[
           const SizedBox(height: 12),
           Text(
-            <String?>[hike.contactName, phone]
-                .whereType<String>()
-                .join(' · '),
+            <String?>[hike.contactName, phone].whereType<String>().join(' · '),
             style: context.primaryFonts.regular14.copyWith(
               color: context.colors.textSecondary,
             ),

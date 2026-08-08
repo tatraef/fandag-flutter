@@ -16,7 +16,7 @@ Both files must have **identical key structures**. Keys are nested by feature:
 ```json
 {
   "common": {
-    "appTitle": "Flutter Template v3",
+    "appTitle": "Fandag",
     "errorOccurred": "An error occurred",
     "retry": "Retry",
     "loading": "Loading..."
@@ -81,7 +81,7 @@ context.t.featureName.newKey
 ## Usage in Widgets
 
 ```dart
-import 'package:flutter_template_v3/core/translations/generated/translations.g.dart';
+import 'package:fandag/core/translations/generated/translations.g.dart';
 
 // In build():
 Text(context.t.auth.signIn)

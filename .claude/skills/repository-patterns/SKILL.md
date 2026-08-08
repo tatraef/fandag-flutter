@@ -11,7 +11,7 @@ Repository interfaces define the **contract** between domain and data layers. Th
 ## Canonical Template
 
 ```dart
-import 'package:flutter_template_v3/features/<feature>/domain/entities/entities.dart';
+import 'package:fandag/features/<feature>/domain/entities/entities.dart';
 
 abstract class FeatureRepository {
   Future<List<Entity>> getEntities();

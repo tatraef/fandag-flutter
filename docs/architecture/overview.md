@@ -2,7 +2,7 @@
 
 ## Pattern: MVVM + Repository on Riverpod
 
-Flutter Template v3 follows **feature-first** project organisation with **MVVM + Repository** architecture, powered by **Riverpod** for dependency injection and state management.
+Fandag follows **feature-first** project organisation with **MVVM + Repository** architecture, powered by **Riverpod** for dependency injection and state management.
 
 ### Core Principles
 
@@ -53,17 +53,17 @@ presentation ──► domain ◄── data
 ### Cross-Feature Imports
 
 When a feature needs types from another feature:
-- Import ONLY via the other feature's **domain barrel**: `import 'package:flutter_template_v3/features/other/domain/domain.dart';`
+- Import ONLY via the other feature's **domain barrel**: `import 'package:fandag/features/other/domain/domain.dart';`
 - NEVER import from another feature's `data` or `presentation` layers
 - This ensures features remain loosely coupled through domain contracts
 
 Example: `home` feature needs `User` from `auth`:
 ```dart
 // CORRECT
-import 'package:flutter_template_v3/features/auth/domain/domain.dart';
+import 'package:fandag/features/auth/domain/domain.dart';
 
 // WRONG — importing from presentation layer of another feature
-import 'package:flutter_template_v3/features/auth/presentation/presentation.dart';
+import 'package:fandag/features/auth/presentation/presentation.dart';
 ```
 
 ---

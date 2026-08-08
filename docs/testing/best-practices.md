@@ -1,6 +1,6 @@
-# Testing Best Practices — Flutter Template v3
+# Testing Best Practices — Fandag
 
-This document outlines testing conventions, patterns, and best practices for Flutter Template v3.
+This document outlines testing conventions, patterns, and best practices for Fandag.
 
 ## General Principles
 
@@ -533,8 +533,8 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:mocktail/mocktail.dart';
 
 // 3. Project imports
-import 'package:flutter_template_v3/core/network/network.dart';
-import 'package:flutter_template_v3/features/home/domain/domain.dart';
+import 'package:fandag/core/network/network.dart';
+import 'package:fandag/features/home/domain/domain.dart';
 
 // 4. Test helper imports (relative imports OK in tests)
 import '../../../helpers/helpers.dart';
@@ -567,7 +567,7 @@ ProviderContainer createContainer({
 
 ```dart
 // ✅ Good - import theme functions
-import 'package:flutter_template_v3/core/theme/theme.dart';
+import 'package:fandag/core/theme/theme.dart';
 
 await tester.pumpWidget(
   MaterialApp(

@@ -108,7 +108,7 @@ AuthRemoteDataSource authRemoteDataSource(Ref ref) {
 @Riverpod(keepAlive: true)
 AuthRepository authRepository(Ref ref) {
   if (AppConfig.useMock) {
-    return MockAuthRepository();
+    return AuthRepositoryMock();
   }
 
   final AuthRemoteDataSource dataSource = ref.watch(authRemoteDataSourceProvider);

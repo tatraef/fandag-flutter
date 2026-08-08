@@ -36,7 +36,7 @@ GoRoute(
 ),
 
 // CORRECT -- import the presentation barrel
-import 'package:flutter_template_v3/features/profile/presentation/presentation.dart';
+import 'package:fandag/features/profile/presentation/presentation.dart';
 ```
 
 ---
@@ -267,7 +267,7 @@ If the new route should be accessible without authentication, add it to the `isA
 Add the feature's presentation barrel to the imports of `app_router.dart`:
 
 ```dart
-import 'package:flutter_template_v3/features/profile/presentation/presentation.dart';
+import 'package:fandag/features/profile/presentation/presentation.dart';
 ```
 
 ### Step 5: Run code generation
@@ -356,5 +356,5 @@ export 'router_observer.dart';
 Import in other files via:
 
 ```dart
-import 'package:flutter_template_v3/core/router/router.dart';
+import 'package:fandag/core/router/router.dart';
 ```

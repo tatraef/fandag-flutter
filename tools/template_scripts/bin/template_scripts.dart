@@ -8,11 +8,11 @@ import 'package:template_scripts/commands/generate_palette_command.dart';
 import 'package:template_scripts/commands/generate_theme_colors_command.dart';
 import 'package:template_scripts/commands/scaffold_feature_command.dart';
 
-/// Flutter Template v3 CLI toolkit entry point
+/// Fandag CLI toolkit entry point
 void main(List<String> arguments) async {
   final runner = CommandRunner(
     'template_scripts',
-    'CLI toolkit for flutter_template_v3 code generation (theme, fonts, feature scaffolding)',
+    'CLI toolkit for fandag code generation (theme, fonts, feature scaffolding)',
   )
     // Generation commands
     ..addCommand(GeneratePaletteCommand())

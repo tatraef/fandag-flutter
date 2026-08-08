@@ -1,4 +1,4 @@
-# Оценка Flutter Template v3 (2026-03-11)
+# Оценка Fandag (2026-03-11)
 
 Оценка построена на фактическом состоянии репозитория: `lib/`, `docs/`, `Makefile`, а также на содержимом `.claude/agents`, `.claude/skills`, `.claude/hooks`.
 

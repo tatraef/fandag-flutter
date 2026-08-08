@@ -1,4 +1,4 @@
-# What to Test — Flutter Template v3
+# What to Test — Fandag
 
 This guide explains **what code should be tested** and **what can be skipped** to maximize testing ROI.
 

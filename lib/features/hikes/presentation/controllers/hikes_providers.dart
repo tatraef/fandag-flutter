@@ -1,3 +1,4 @@
+import 'package:fandag/core/environment/app_config.dart';
 import 'package:fandag/core/network/network.dart';
 import 'package:fandag/features/hikes/data/data.dart';
 import 'package:fandag/features/hikes/domain/domain.dart';
@@ -14,6 +15,10 @@ HikeRemoteDataSource hikeRemoteDataSource(Ref ref) {
 
 @riverpod
 HikeRepository hikeRepository(Ref ref) {
+  if (AppConfig.useMock) {
+    return HikeRepositoryMock();
+  }
+
   final HikeRemoteDataSource dataSource = ref.watch(
     hikeRemoteDataSourceProvider,
   );

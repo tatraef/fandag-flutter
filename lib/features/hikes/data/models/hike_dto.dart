@@ -44,7 +44,7 @@ abstract class HikeDto with _$HikeDto {
       organizer: organizer.toDomain(),
       dateEnd: dateEnd,
       price: price,
-      difficulty: difficulty,
+      difficulty: HikeDifficulty.tryParse(difficulty),
       distanceKm: distanceKm,
       elevationGainM: elevationGainM,
       departureTime: departureTime,
